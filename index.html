@@ -824,14 +824,8 @@
 
   async function searchContacts(query) {
     try {
-      const url = `https://services.leadconnectorhq.com/contacts/?locationId=${GHL_LOCATION_ID}&query=${encodeURIComponent(query)}&limit=8`;
-      const res = await fetch(url, {
-        headers: {
-          'Authorization': `Bearer ${GHL_API_KEY}`,
-          'Version': '2021-07-28',
-          'Accept': 'application/json'
-        }
-      });
+      const url = `/.netlify/functions/search-contacts?query=${encodeURIComponent(query)}`;
+      const res = await fetch(url);
       const data = await res.json();
       const contacts = data.contacts || [];
 
