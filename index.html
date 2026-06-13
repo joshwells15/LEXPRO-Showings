@@ -934,7 +934,7 @@
 
   async function loadQueue() {
     try {
-      const range = encodeURIComponent('Scheduled SMS!A:J');
+      const range = encodeURIComponent('Scheduled SMS Action!A:K');
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`;
       const res = await fetch(url);
       const data = await res.json();
