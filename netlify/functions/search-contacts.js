@@ -13,7 +13,7 @@ exports.handler = async function(event) {
 
     const res = await fetch(url, {
       headers: {
-        'Authorization': 'Bearer pit-4e98487c-3f65-409c-a264-16352f97c01a',
+        'Authorization': `Bearer ${process.env.GHL_API_KEY}`,
         'Version': '2021-07-28',
         'Accept': 'application/json'
       }
