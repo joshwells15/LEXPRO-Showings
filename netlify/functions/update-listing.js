@@ -9,7 +9,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { contactId, street, city, state, zip, price } = JSON.parse(event.body || '{}');
+    const { contactId, street, city, state, zip, price, side, liveDate } = JSON.parse(event.body || '{}');
 
     if (!contactId) {
       return { statusCode: 400, body: JSON.stringify({ error: 'No contact selected.' }) };
@@ -25,6 +25,16 @@ exports.handler = async (event) => {
       { key: 'seller__subject_property_zip_code', field_value: zip.trim() },
       { key: 'seller_transactions',               field_value: 'Listing Live' },
     ];
+
+    if (side) {
+      // represented_side is a multi-select dropdown in GHL — value must be an array
+      customFields.push({ key: 'represented_side', field_value: [side] });
+    }
+
+    if (liveDate) {
+      // listing_live is a date picker — YYYY-MM-DD
+      customFields.push({ key: 'listing_live', field_value: liveDate });
+    }
 
     if (price) {
       const cleanPrice = String(price).replace(/[^0-9.]/g, '');
