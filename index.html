@@ -7,552 +7,163 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1B2A47;
-    --gold: #C9A84C;
-    --gold-light: #F5E6C8;
-    --cream: #FAF7F2;
-    --white: #FFFFFF;
-    --gray: #6B7280;
-    --border: #E5E0D8;
-    --success: #2E7D32;
-    --error: #C62828;
+    --navy: #1B2A47; --gold: #C9A84C; --gold-light: #F5E6C8; --cream: #FAF7F2;
+    --white: #FFFFFF; --gray: #6B7280; --border: #E5E0D8; --success: #2E7D32; --error: #C62828;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 40px 20px 60px;
-  }
-
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px 60px; }
   .header { text-align: center; margin-bottom: 24px; }
   .logo-mark { margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; }
   .logo-mark img { height: 56px; width: auto; }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--navy);
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-  }
-
-  .subtitle { font-size: 14px; color: var(--gray); margin-top: 6px; font-weight: 300; letter-spacing: 0.3px; }
-
-  /* ── MAIN TABS ── */
-  .tabs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 6px;
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .tab-btn {
-    flex: 1;
-    padding: 12px 8px;
-    border: none;
-    background: transparent;
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray);
-    cursor: pointer;
-    letter-spacing: 0.2px;
-    transition: background 0.2s, color 0.2s;
-  }
-
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; }
+  .subtitle { font-size: 14px; color: var(--gray); margin-top: 6px; font-weight: 300; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 6px; width: 100%; max-width: 560px; }
+  .tab-btn { flex: 1; padding: 11px 6px; border: none; background: transparent; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--gray); cursor: pointer; transition: background 0.2s, color 0.2s; }
   .tab-btn.active { background: var(--navy); color: var(--white); }
-
-  /* ── SUB TABS ── */
-  .sub-tabs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .sub-tab-btn {
-    flex: 1;
-    padding: 11px 8px;
-    border: 1.5px solid var(--border);
-    background: var(--white);
-    border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray);
-    cursor: pointer;
-    letter-spacing: 0.2px;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-  }
-
+  .sub-tabs { display: flex; gap: 8px; margin-bottom: 16px; width: 100%; max-width: 560px; }
+  .sub-tab-btn { flex: 1; padding: 11px 8px; border: 1.5px solid var(--border); background: var(--white); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--gray); cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s; }
   .sub-tab-btn.active { border-color: var(--gold); background: var(--gold-light); color: var(--navy); }
-
-  /* ── PILL TABS ── */
-  .pill-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .pill-btn {
-    padding: 8px 16px;
-    border: 1.5px solid var(--border);
-    background: var(--white);
-    border-radius: 999px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gray);
-    cursor: pointer;
-    letter-spacing: 0.2px;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-  }
-
+  .pill-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; width: 100%; max-width: 560px; }
+  .pill-btn { padding: 8px 14px; border: 1.5px solid var(--border); background: var(--white); border-radius: 999px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--gray); cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s; }
   .pill-btn.active { border-color: var(--navy); background: var(--navy); color: var(--white); }
-
   .tab-page { display: none; width: 100%; max-width: 560px; flex-direction: column; align-items: center; }
   .tab-page.active { display: flex; }
-
   .sub-page { display: none; width: 100%; flex-direction: column; align-items: center; }
   .sub-page.active { display: flex; }
-
   .tool-page { display: none; width: 100%; }
   .tool-page.active { display: block; }
-
-  /* ── UC SUB-TABS (Updates / Date Inputs) ── */
-  .uc-tabs {
-    display: flex;
-    gap: 0;
-    margin-bottom: 24px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .uc-tab-btn {
-    flex: 1;
-    padding: 10px 8px;
-    border: none;
-    background: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gray);
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    border-right: 1.5px solid var(--border);
-  }
-
+  .uc-tabs { display: flex; margin-bottom: 24px; border: 1.5px solid var(--border); border-radius: 10px; overflow: hidden; width: 100%; }
+  .uc-tab-btn { flex: 1; padding: 10px 8px; border: none; background: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--gray); cursor: pointer; transition: background 0.2s, color 0.2s; border-right: 1.5px solid var(--border); }
   .uc-tab-btn:last-child { border-right: none; }
   .uc-tab-btn.active { background: var(--navy); color: var(--white); }
-
   .uc-panel { display: none; }
   .uc-panel.active { display: block; }
-
-  /* ── RADIO GROUP ── */
-  .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 4px;
-  }
-
-  .radio-opt {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    color: var(--navy);
-    background: var(--cream);
-    transition: border-color 0.2s, background 0.2s;
-    user-select: none;
-  }
-
+  .radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .radio-opt { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; font-size: 14px; color: var(--navy); background: var(--cream); transition: border-color 0.2s, background 0.2s; user-select: none; }
   .radio-opt:hover { border-color: var(--gold); background: var(--gold-light); }
-
   .radio-opt.selected { border-color: var(--navy); background: var(--navy); color: var(--white); }
-
-  .radio-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid currentColor;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: border-color 0.2s;
-  }
-
-  .radio-dot::after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0;
-    transition: opacity 0.15s;
-  }
-
+  .radio-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .radio-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: 0; transition: opacity 0.15s; }
   .radio-opt.selected .radio-dot::after { opacity: 1; }
-
-  /* ── YES/NO TOGGLE ── */
   .yn-group { display: flex; gap: 10px; margin-top: 4px; }
-
-  .yn-btn {
-    flex: 1;
-    padding: 11px 8px;
-    border: 1.5px solid var(--border);
-    background: var(--cream);
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray);
-    cursor: pointer;
-    text-align: center;
-    transition: border-color 0.2s, background 0.2s, color 0.2s;
-  }
-
+  .yn-btn { flex: 1; padding: 11px 8px; border: 1.5px solid var(--border); background: var(--cream); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--gray); cursor: pointer; text-align: center; transition: border-color 0.2s, background 0.2s, color 0.2s; }
   .yn-btn.selected { border-color: var(--navy); background: var(--navy); color: var(--white); }
-
-  .card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 40px;
-    width: 100%;
-    box-shadow: 0 4px 40px rgba(27, 42, 71, 0.08);
-    border: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--gold-light);
-  }
-
+  .card { background: var(--white); border-radius: 20px; padding: 40px; width: 100%; box-shadow: 0 4px 40px rgba(27,42,71,0.08); border: 1px solid var(--border); }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-light); }
   .form-group { margin-bottom: 20px; }
-
-  label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 6px;
-    letter-spacing: 0.2px;
-  }
-
+  label { display: block; font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
   label .req { color: var(--gold); margin-left: 2px; }
-
-  input, select, textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--navy);
-    background: var(--cream);
-    transition: border-color 0.2s, box-shadow 0.2s;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
+  input, select, textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--navy); background: var(--cream); transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
   textarea { resize: vertical; min-height: 100px; }
-
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
-    background: var(--white);
-  }
-
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); background: var(--white); }
   input::placeholder, textarea::placeholder { color: #B0A99A; }
-
   .select-wrap { position: relative; }
-  .select-wrap::after {
-    content: '▾';
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--gold);
-    font-size: 14px;
-    pointer-events: none;
-  }
-
+  .select-wrap::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 14px; pointer-events: none; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
   .divider { height: 1px; background: var(--border); margin: 28px 0; }
-
-  .btn {
-    width: 100%;
-    padding: 16px;
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-    border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.1s;
-    margin-top: 8px;
-    position: relative;
-  }
-
+  .btn { width: 100%; padding: 16px; background: var(--navy); color: var(--white); border: none; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.1s; margin-top: 8px; }
   .btn:hover { background: #243659; }
   .btn:active { transform: scale(0.99); }
   .btn:disabled { background: #B0A99A; cursor: not-allowed; }
-
   .btn-inner { display: flex; align-items: center; justify-content: center; gap: 8px; }
-
-  .spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
-
+  .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .loading .spinner { display: block; }
   .loading .btn-text { opacity: 0.7; }
-
-  .toast {
-    display: none;
-    position: fixed;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--success);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    z-index: 100;
-    animation: slideDown 0.3s ease;
-  }
-
+  .toast { display: none; position: fixed; top: 24px; left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 500; z-index: 100; animation: slideDown 0.3s ease; }
   .toast.error { background: var(--error); }
   .toast.show { display: block; }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-  }
-
-  .loading-listings {
-    font-size: 13px;
-    color: var(--gray);
-    font-style: italic;
-    padding: 12px 16px;
-    background: var(--cream);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-  }
-
-  /* ── CONTACT SEARCH ── */
+  @keyframes slideDown { from { opacity:0; transform:translateX(-50%) translateY(-10px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+  .loading-listings { font-size: 13px; color: var(--gray); font-style: italic; padding: 12px 16px; background: var(--cream); border: 1.5px solid var(--border); border-radius: 10px; }
   .search-wrap { position: relative; }
-
-  .search-results {
-    display: none;
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    box-shadow: 0 8px 32px rgba(27, 42, 71, 0.12);
-    z-index: 50;
-    max-height: 240px;
-    overflow-y: auto;
-  }
-
+  .search-results { display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--white); border: 1.5px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(27,42,71,0.12); z-index: 50; max-height: 240px; overflow-y: auto; }
   .search-results.show { display: block; }
-
-  .search-result {
-    padding: 12px 16px;
-    cursor: pointer;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s;
-  }
-
+  .search-result { padding: 12px 16px; cursor: pointer; border-bottom: 1px solid var(--border); transition: background 0.15s; }
   .search-result:last-child { border-bottom: none; }
   .search-result:hover { background: var(--gold-light); }
-
   .sr-name { font-size: 14px; font-weight: 500; color: var(--navy); }
   .sr-phone { font-size: 12px; color: var(--gray); margin-top: 2px; }
-
-  .selected-contact {
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-    background: var(--gold-light);
-    border: 1.5px solid var(--gold);
-    border-radius: 10px;
-    margin-top: 8px;
-  }
-
+  .selected-contact { display: none; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 10px; margin-top: 8px; }
   .selected-contact.show { display: flex; }
-
   .sc-info { font-size: 14px; color: var(--navy); font-weight: 500; }
-  .sc-phone { font-size: 12px; color: var(--gray); font-weight: 400; }
-
-  .sc-clear {
-    background: none;
-    border: none;
-    color: var(--navy);
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0 4px;
-    line-height: 1;
-  }
-
+  .sc-phone { font-size: 12px; color: var(--gray); }
+  .sc-clear { background: none; border: none; color: var(--navy); font-size: 18px; cursor: pointer; padding: 0 4px; }
   .char-count { font-size: 11px; color: var(--gray); text-align: right; margin-top: 4px; }
   .char-count.over { color: var(--error); }
-
-  /* ── QUEUE ── */
   .queue-card { margin-top: 24px; }
-
-  .queue-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--gold-light);
-  }
-
+  .queue-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-light); }
   .queue-title { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
-
-  .refresh-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 6px 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    color: var(--gray);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
+  .refresh-btn { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--gray); cursor: pointer; }
   .refresh-btn:hover { border-color: var(--gold); color: var(--navy); }
-
   .queue-empty { font-size: 13px; color: var(--gray); font-style: italic; padding: 16px 0; text-align: center; }
-
-  .queue-item {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-    background: var(--cream);
-  }
-
+  .queue-item { border: 1.5px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 12px; background: var(--cream); }
   .qi-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
   .qi-name { font-size: 14px; font-weight: 500; color: var(--navy); }
   .qi-when { font-size: 12px; color: var(--gold); font-weight: 500; white-space: nowrap; }
   .qi-msg { font-size: 13px; color: var(--gray); line-height: 1.5; margin-bottom: 12px; white-space: pre-wrap; word-break: break-word; }
   .qi-actions { display: flex; gap: 8px; }
-
-  .qi-btn {
-    flex: 1;
-    padding: 9px;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-
-  .qi-btn:hover { opacity: 0.85; }
-  .qi-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .qi-btn { flex: 1; padding: 9px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; }
   .qi-edit { background: var(--white); border: 1.5px solid var(--navy); color: var(--navy); }
   .qi-cancel { background: var(--white); border: 1.5px solid var(--error); color: var(--error); }
-
-  .sent-item {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .sent-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .sent-item:last-child { border-bottom: none; }
   .si-name { font-size: 13px; font-weight: 500; color: var(--navy); white-space: nowrap; }
   .si-msg { font-size: 12px; color: var(--gray); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .si-when { font-size: 11px; color: var(--gray); white-space: nowrap; }
-
-  .editing-banner {
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 16px;
-    background: var(--gold-light);
-    border: 1.5px solid var(--gold);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: var(--navy);
-    font-weight: 500;
-  }
-
+  .editing-banner { display: none; align-items: center; justify-content: space-between; padding: 10px 16px; background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 10px; margin-bottom: 20px; font-size: 13px; color: var(--navy); font-weight: 500; }
   .editing-banner.show { display: flex; }
-
-  .eb-cancel {
-    background: none;
-    border: none;
-    color: var(--navy);
-    font-size: 13px;
-    text-decoration: underline;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-  }
-
+  .eb-cancel { background: none; border: none; color: var(--navy); font-size: 13px; text-decoration: underline; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  /* DEADLINES */
+  .deadline-list { display: flex; flex-direction: column; gap: 8px; }
+  .deadline-row { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; border: 1.5px solid var(--border); border-radius: 10px; background: var(--cream); }
+  .deadline-row.urgent { border-color: #FECACA; background: #FEF2F2; }
+  .deadline-row.soon   { border-color: #FDE68A; background: #FFFBEB; }
+  .deadline-row.closing { border-color: #BFDBFE; background: #EFF6FF; }
+  .dl-label { font-size: 14px; font-weight: 500; color: var(--navy); }
+  .deadline-row.urgent .dl-label { color: #991B1B; }
+  .deadline-row.soon   .dl-label { color: #78350F; }
+  .deadline-row.closing .dl-label { color: #1E40AF; }
+  .dl-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .dl-date { font-size: 13px; color: var(--gray); }
+  .deadline-row.urgent .dl-date { color: #991B1B; }
+  .deadline-row.soon   .dl-date { color: #78350F; }
+  .deadline-row.closing .dl-date { color: #1E40AF; }
+  .dl-badge { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
+  .badge-urgent  { background: #FEE2E2; color: #991B1B; }
+  .badge-soon    { background: #FEF3C7; color: #78350F; }
+  .badge-ok      { background: #DCFCE7; color: #166534; }
+  .badge-closing { background: #DBEAFE; color: #1E40AF; }
+  .dl-empty { font-size: 13px; color: var(--gray); font-style: italic; text-align: center; padding: 24px 0; }
+  .dl-loading { font-size: 13px; color: var(--gray); font-style: italic; text-align: center; padding: 16px 0; }
+  /* CALENDAR */
+  .cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .cal-month-label { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--navy); }
+  .cal-nav { display: flex; gap: 8px; }
+  .cal-nav-btn { padding: 7px 14px; border: 1.5px solid var(--border); background: var(--white); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--gray); cursor: pointer; }
+  .cal-nav-btn:hover { border-color: var(--gold); color: var(--navy); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+  .cal-day-hdr { font-size: 11px; font-weight: 500; color: var(--gray); text-align: center; padding: 4px 0 10px; letter-spacing: 0.5px; }
+  .cal-cell { min-height: 72px; border: 1px solid var(--border); border-radius: 8px; padding: 6px 5px; background: var(--white); }
+  .cal-cell.other-month { background: var(--cream); opacity: 0.45; }
+  .cal-cell.today { border-color: var(--navy); border-width: 2px; }
+  .cal-num { font-size: 12px; font-weight: 500; color: var(--gray); margin-bottom: 4px; }
+  .cal-cell.today .cal-num { color: var(--navy); font-weight: 700; }
+  .cal-event { font-size: 10px; font-weight: 500; padding: 2px 4px; border-radius: 4px; margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ev-urgent  { background: #FEE2E2; color: #991B1B; }
+  .ev-soon    { background: #FEF3C7; color: #78350F; }
+  .ev-ok      { background: #DCFCE7; color: #166534; }
+  .ev-closing { background: #DBEAFE; color: #1E40AF; }
+  .cal-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--gray); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .cal-status { font-size: 13px; color: var(--gray); font-style: italic; text-align: center; padding: 32px 0; }
   @media (max-width: 480px) {
     .card { padding: 28px 20px; }
     .row { grid-template-columns: 1fr; gap: 0; }
     h1 { font-size: 26px; }
     .pill-btn { flex: 1 1 auto; text-align: center; }
+    .cal-cell { min-height: 52px; padding: 4px 3px; }
+    .cal-event { font-size: 9px; }
   }
 </style>
 </head>
@@ -564,206 +175,109 @@
   <p class="subtitle">LexPro Real Estate · Internal Use Only</p>
 </div>
 
-<!-- ── MAIN TABS ── -->
 <div class="tabs">
   <button class="tab-btn active" data-tab="contacts">Contact Type</button>
+  <button class="tab-btn" data-tab="calendar">Calendar</button>
   <button class="tab-btn" data-tab="messages">Scheduled Messages</button>
 </div>
 
-<!-- ════════════ TAB 1: CONTACT TYPE ════════════ -->
+<!-- TAB 1: CONTACT TYPE -->
 <div class="tab-page active" id="page-contacts">
-
   <div class="sub-tabs">
     <button class="sub-tab-btn active" data-sub="seller">Seller</button>
     <button class="sub-tab-btn" data-sub="buyer">Buyer</button>
   </div>
 
-  <!-- ─────────── SELLER ─────────── -->
+  <!-- SELLER -->
   <div class="sub-page active" id="sub-seller">
-
     <div class="pill-tabs" id="sellerPills">
       <button class="pill-btn active" data-tool="seller-create">Create Contact</button>
       <button class="pill-btn" data-tool="seller-listing">New Listing</button>
       <button class="pill-btn" data-tool="seller-showing">Showing Intake</button>
       <button class="pill-btn" data-tool="seller-uc">Under Contract</button>
+      <button class="pill-btn" data-tool="seller-deadlines">Deadlines</button>
     </div>
 
-    <!-- SELLER: CREATE CONTACT -->
     <div class="tool-page active" id="tool-seller-create">
       <div class="card">
         <form id="sellerCreateForm">
           <div class="section-label">New Seller Contact</div>
           <div class="row">
-            <div class="form-group">
-              <label for="sc-first">First Name <span class="req">*</span></label>
-              <input type="text" id="sc-first" placeholder="First name" required>
-            </div>
-            <div class="form-group">
-              <label for="sc-last">Last Name <span class="req">*</span></label>
-              <input type="text" id="sc-last" placeholder="Last name" required>
-            </div>
+            <div class="form-group"><label for="sc-first">First Name <span class="req">*</span></label><input type="text" id="sc-first" placeholder="First name" required></div>
+            <div class="form-group"><label for="sc-last">Last Name <span class="req">*</span></label><input type="text" id="sc-last" placeholder="Last name" required></div>
           </div>
-          <div class="form-group">
-            <label for="sc-phone">Phone <span class="req">*</span></label>
-            <input type="tel" id="sc-phone" placeholder="(417) 555-0100" required>
-          </div>
-          <div class="form-group">
-            <label for="sc-email">Email</label>
-            <input type="email" id="sc-email" placeholder="name@email.com">
-          </div>
-          <button type="submit" class="btn" id="sellerCreateBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Contact</span></div>
-          </button>
+          <div class="form-group"><label for="sc-phone">Phone <span class="req">*</span></label><input type="tel" id="sc-phone" placeholder="(417) 555-0100" required></div>
+          <div class="form-group"><label for="sc-email">Email</label><input type="email" id="sc-email" placeholder="name@email.com"></div>
+          <button type="submit" class="btn" id="sellerCreateBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Contact</span></div></button>
         </form>
       </div>
     </div>
 
-    <!-- SELLER: NEW LISTING -->
     <div class="tool-page" id="tool-seller-listing">
       <div class="card">
         <form id="listingForm">
           <div class="section-label">Seller Contact</div>
           <div class="form-group">
             <label for="ls-search">Search Contacts <span class="req">*</span></label>
-            <div class="search-wrap">
-              <input type="text" id="ls-search" placeholder="Start typing a name..." autocomplete="off">
-              <div class="search-results" id="lsResults"></div>
-            </div>
-            <div class="selected-contact" id="lsSelected">
-              <div><div class="sc-info" id="lsName"></div><div class="sc-phone" id="lsPhone"></div></div>
-              <button type="button" class="sc-clear" id="lsClear">✕</button>
-            </div>
+            <div class="search-wrap"><input type="text" id="ls-search" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="lsResults"></div></div>
+            <div class="selected-contact" id="lsSelected"><div><div class="sc-info" id="lsName"></div><div class="sc-phone" id="lsPhone"></div></div><button type="button" class="sc-clear" id="lsClear">✕</button></div>
           </div>
           <div class="divider"></div>
           <div class="section-label">Property</div>
-          <div class="form-group">
-            <label for="ls-street">Street Address <span class="req">*</span></label>
-            <input type="text" id="ls-street" placeholder="123 Main St" required>
+          <div class="form-group"><label for="ls-street">Street Address <span class="req">*</span></label><input type="text" id="ls-street" placeholder="123 Main St" required></div>
+          <div class="row">
+            <div class="form-group"><label for="ls-city">City <span class="req">*</span></label><input type="text" id="ls-city" placeholder="Springfield" required></div>
+            <div class="form-group"><label for="ls-state">State <span class="req">*</span></label><input type="text" id="ls-state" placeholder="MO" required></div>
           </div>
           <div class="row">
-            <div class="form-group">
-              <label for="ls-city">City <span class="req">*</span></label>
-              <input type="text" id="ls-city" placeholder="Springfield" required>
-            </div>
-            <div class="form-group">
-              <label for="ls-state">State <span class="req">*</span></label>
-              <input type="text" id="ls-state" placeholder="MO" required>
-            </div>
+            <div class="form-group"><label for="ls-zip">Zip Code <span class="req">*</span></label><input type="text" id="ls-zip" placeholder="65804" required></div>
+            <div class="form-group"><label for="ls-price">Listing Price</label><input type="text" id="ls-price" placeholder="$250,000" inputmode="numeric"></div>
           </div>
           <div class="row">
-            <div class="form-group">
-              <label for="ls-zip">Zip Code <span class="req">*</span></label>
-              <input type="text" id="ls-zip" placeholder="65804" required>
-            </div>
-            <div class="form-group">
-              <label for="ls-price">Listing Price</label>
-              <input type="text" id="ls-price" placeholder="$250,000" inputmode="numeric">
-            </div>
+            <div class="form-group"><label for="ls-side">Represented Side <span class="req">*</span></label><div class="select-wrap"><select id="ls-side" required><option value="">— Select —</option><option value="Seller">Seller</option><option value="Buyer">Buyer</option><option value="Dual Agency">Dual Agency</option></select></div></div>
+            <div class="form-group"><label for="ls-livedate">Listing Live Date <span class="req">*</span></label><input type="date" id="ls-livedate" required></div>
           </div>
-          <div class="row">
-            <div class="form-group">
-              <label for="ls-side">Represented Side <span class="req">*</span></label>
-              <div class="select-wrap">
-                <select id="ls-side" required>
-                  <option value="">— Select —</option>
-                  <option value="Seller">Seller</option>
-                  <option value="Buyer">Buyer</option>
-                  <option value="Dual Agency">Dual Agency</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="ls-livedate">Listing Live Date <span class="req">*</span></label>
-              <input type="date" id="ls-livedate" required>
-            </div>
-          </div>
-          <button type="submit" class="btn" id="listingBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Listing — Go Live</span></div>
-          </button>
+          <button type="submit" class="btn" id="listingBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Listing — Go Live</span></div></button>
         </form>
       </div>
     </div>
 
-    <!-- SELLER: SHOWING INTAKE -->
     <div class="tool-page" id="tool-seller-showing">
       <div class="card">
         <form id="showingForm">
           <div class="section-label">Listing</div>
-          <div class="form-group">
-            <label for="listing">Property Address <span class="req">*</span></label>
-            <div class="select-wrap">
-              <div id="listingLoading" class="loading-listings">Loading active listings...</div>
-              <select id="listing" name="listing" style="display:none;" required>
-                <option value="">— Select a listing —</option>
-              </select>
-            </div>
-          </div>
+          <div class="form-group"><label for="listing">Property Address <span class="req">*</span></label><div class="select-wrap"><div id="listingLoading" class="loading-listings">Loading active listings...</div><select id="listing" name="listing" style="display:none;" required><option value="">— Select a listing —</option></select></div></div>
           <div class="divider"></div>
           <div class="section-label">Showing Agent</div>
-          <div class="form-group">
-            <label for="agentName">Agent Name <span class="req">*</span></label>
-            <input type="text" id="agentName" name="agentName" placeholder="Full name" required>
-          </div>
+          <div class="form-group"><label for="agentName">Agent Name <span class="req">*</span></label><input type="text" id="agentName" placeholder="Full name" required></div>
           <div class="row">
-            <div class="form-group">
-              <label for="agentPhone">Agent Phone</label>
-              <input type="tel" id="agentPhone" name="agentPhone" placeholder="(417) 555-0100">
-            </div>
-            <div class="form-group">
-              <label for="agentEmail">Agent Email</label>
-              <input type="email" id="agentEmail" name="agentEmail" placeholder="agent@realty.com">
-            </div>
+            <div class="form-group"><label for="agentPhone">Agent Phone</label><input type="tel" id="agentPhone" placeholder="(417) 555-0100"></div>
+            <div class="form-group"><label for="agentEmail">Agent Email</label><input type="email" id="agentEmail" placeholder="agent@realty.com"></div>
           </div>
           <div class="divider"></div>
           <div class="section-label">Showing Details</div>
           <div class="row">
-            <div class="form-group">
-              <label for="showingDate">Date <span class="req">*</span></label>
-              <input type="date" id="showingDate" name="showingDate" required>
-            </div>
-            <div class="form-group">
-              <label for="showingTime">Time <span class="req">*</span></label>
-              <input type="time" id="showingTime" name="showingTime" required>
-            </div>
+            <div class="form-group"><label for="showingDate">Date <span class="req">*</span></label><input type="date" id="showingDate" required></div>
+            <div class="form-group"><label for="showingTime">Time <span class="req">*</span></label><input type="time" id="showingTime" required></div>
           </div>
-          <button type="submit" class="btn" id="submitBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Log Showing</span></div>
-          </button>
+          <button type="submit" class="btn" id="submitBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Log Showing</span></div></button>
         </form>
       </div>
     </div>
 
-    <!-- SELLER: UNDER CONTRACT -->
     <div class="tool-page" id="tool-seller-uc">
       <div class="card">
-
-        <!-- Contact Search -->
         <div class="section-label">Seller Contact</div>
         <div class="form-group">
           <label for="suc-search">Search Contacts <span class="req">*</span></label>
-          <div class="search-wrap">
-            <input type="text" id="suc-search" placeholder="Start typing a name..." autocomplete="off">
-            <div class="search-results" id="sucResults"></div>
-          </div>
-          <div class="selected-contact" id="sucSelected">
-            <div><div class="sc-info" id="sucName"></div><div class="sc-phone" id="sucPhone"></div></div>
-            <button type="button" class="sc-clear" id="sucClear">✕</button>
-          </div>
+          <div class="search-wrap"><input type="text" id="suc-search" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="sucResults"></div></div>
+          <div class="selected-contact" id="sucSelected"><div><div class="sc-info" id="sucName"></div><div class="sc-phone" id="sucPhone"></div></div><button type="button" class="sc-clear" id="sucClear">✕</button></div>
         </div>
-
         <div class="divider"></div>
-
-        <!-- UC Sub-tabs -->
-        <div class="uc-tabs">
-          <button class="uc-tab-btn active" data-uc="suc-updates">Updates</button>
-          <button class="uc-tab-btn" data-uc="suc-dates">Date Inputs</button>
-        </div>
-
-        <!-- UPDATES PANEL -->
+        <div class="uc-tabs"><button class="uc-tab-btn active" data-uc="suc-updates">Updates</button><button class="uc-tab-btn" data-uc="suc-dates">Date Inputs</button></div>
         <div class="uc-panel active" id="suc-updates">
           <div class="section-label">Transaction Status</div>
-          <div class="form-group">
-            <label>Seller Transactions</label>
+          <div class="form-group"><label>Seller Transactions</label>
             <div class="radio-group" id="sucTransRadio">
               <div class="radio-opt" data-val="Documents Signed"><span class="radio-dot"></span>Documents Signed</div>
               <div class="radio-opt" data-val="Listing Photos Scheduled"><span class="radio-dot"></span>Listing Photos Scheduled</div>
@@ -774,158 +288,88 @@
               <div class="radio-opt" data-val="Closed"><span class="radio-dot"></span>Closed</div>
             </div>
           </div>
-
           <div class="divider"></div>
           <div class="section-label">Transaction Details</div>
-
-          <div class="form-group">
-            <label>Closing Gift Ordered</label>
-            <div class="yn-group">
-              <button type="button" class="yn-btn" data-yn="suc-gift" data-val="Yes">Yes</button>
-              <button type="button" class="yn-btn" data-yn="suc-gift" data-val="No">No</button>
-            </div>
-          </div>
-
+          <div class="form-group"><label>Closing Gift Ordered</label><div class="yn-group"><button type="button" class="yn-btn" data-yn="suc-gift" data-val="Yes">Yes</button><button type="button" class="yn-btn" data-yn="suc-gift" data-val="No">No</button></div></div>
           <div class="row">
-            <div class="form-group">
-              <label for="suc-commission">Commission Amount</label>
-              <input type="text" id="suc-commission" placeholder="e.g. 9750" inputmode="numeric">
-            </div>
-            <div class="form-group">
-              <label for="suc-sales">Sales Price</label>
-              <input type="text" id="suc-sales" placeholder="e.g. 325000" inputmode="numeric">
-            </div>
+            <div class="form-group"><label for="suc-commission">Commission Amount</label><input type="text" id="suc-commission" placeholder="e.g. 9750" inputmode="numeric"></div>
+            <div class="form-group"><label for="suc-sales">Sales Price</label><input type="text" id="suc-sales" placeholder="e.g. 325000" inputmode="numeric"></div>
           </div>
-
-          <button type="button" class="btn" id="sucUpdatesBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Updates</span></div>
-          </button>
+          <button type="button" class="btn" id="sucUpdatesBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Updates</span></div></button>
         </div>
-
-        <!-- DATE INPUTS PANEL -->
         <div class="uc-panel" id="suc-dates">
           <div class="section-label">Transaction Dates</div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="suc-uc-date">Under Contract Date</label>
-              <input type="date" id="suc-uc-date">
-            </div>
-            <div class="form-group">
-              <label for="suc-closing-date">Tentative Closing Date</label>
-              <input type="date" id="suc-closing-date">
-            </div>
+            <div class="form-group"><label for="suc-uc-date">Under Contract Date</label><input type="date" id="suc-uc-date"></div>
+            <div class="form-group"><label for="suc-closing-date">Tentative Closing Date</label><input type="date" id="suc-closing-date"></div>
           </div>
-
           <div class="divider"></div>
           <div class="section-label">Deadline Days</div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="suc-insp-days">Inspection Notice Days</label>
-              <input type="number" id="suc-insp-days" placeholder="e.g. 10" min="0">
-            </div>
-            <div class="form-group">
-              <label for="suc-insp-resp-days">Inspection Response Days</label>
-              <input type="number" id="suc-insp-resp-days" placeholder="e.g. 3" min="0">
-            </div>
+            <div class="form-group"><label for="suc-insp-days">Inspection Notice Days</label><input type="number" id="suc-insp-days" placeholder="e.g. 10" min="0"></div>
+            <div class="form-group"><label for="suc-insp-resp-days">Inspection Response Days</label><input type="number" id="suc-insp-resp-days" placeholder="e.g. 3" min="0"></div>
           </div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="suc-appraisal-days">Appraisal Days</label>
-              <input type="number" id="suc-appraisal-days" placeholder="e.g. 21" min="0">
-            </div>
-            <div class="form-group">
-              <label for="suc-title-days">Title Days</label>
-              <input type="number" id="suc-title-days" placeholder="e.g. 15" min="0">
-            </div>
+            <div class="form-group"><label for="suc-appraisal-days">Appraisal Days</label><input type="number" id="suc-appraisal-days" placeholder="e.g. 21" min="0"></div>
+            <div class="form-group"><label for="suc-title-days">Title Days</label><input type="number" id="suc-title-days" placeholder="e.g. 15" min="0"></div>
           </div>
-
-          <div class="form-group">
-            <label for="suc-financial-days">Financial Days</label>
-            <input type="number" id="suc-financial-days" placeholder="e.g. 21" min="0">
-          </div>
-
-          <button type="button" class="btn" id="sucDatesBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Date Inputs</span></div>
-          </button>
+          <div class="form-group"><label for="suc-financial-days">Financial Days</label><input type="number" id="suc-financial-days" placeholder="e.g. 21" min="0"></div>
+          <button type="button" class="btn" id="sucDatesBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Date Inputs</span></div></button>
         </div>
-
       </div>
     </div>
 
-  </div><!-- /sub-seller -->
+    <div class="tool-page" id="tool-seller-deadlines">
+      <div class="card">
+        <div class="section-label">Seller Contact</div>
+        <div class="form-group">
+          <label for="sdl-search">Search Contacts <span class="req">*</span></label>
+          <div class="search-wrap"><input type="text" id="sdl-search" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="sdlResults"></div></div>
+          <div class="selected-contact" id="sdlSelected"><div><div class="sc-info" id="sdlName"></div><div class="sc-phone" id="sdlPhone"></div></div><button type="button" class="sc-clear" id="sdlClear">✕</button></div>
+        </div>
+        <div class="divider"></div>
+        <div class="section-label">Transaction Deadlines</div>
+        <div id="sdlDeadlines"><div class="dl-empty">Search for a contact above to view their deadlines.</div></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- ─────────── BUYER ─────────── -->
+  <!-- BUYER -->
   <div class="sub-page" id="sub-buyer">
-
     <div class="pill-tabs" id="buyerPills">
       <button class="pill-btn active" data-tool="buyer-create">Create Contact</button>
       <button class="pill-btn" data-tool="buyer-uc">Under Contract</button>
+      <button class="pill-btn" data-tool="buyer-deadlines">Deadlines</button>
     </div>
 
-    <!-- BUYER: CREATE CONTACT -->
     <div class="tool-page active" id="tool-buyer-create">
       <div class="card">
         <form id="buyerCreateForm">
           <div class="section-label">New Buyer Contact</div>
           <div class="row">
-            <div class="form-group">
-              <label for="bc-first">First Name <span class="req">*</span></label>
-              <input type="text" id="bc-first" placeholder="First name" required>
-            </div>
-            <div class="form-group">
-              <label for="bc-last">Last Name <span class="req">*</span></label>
-              <input type="text" id="bc-last" placeholder="Last name" required>
-            </div>
+            <div class="form-group"><label for="bc-first">First Name <span class="req">*</span></label><input type="text" id="bc-first" placeholder="First name" required></div>
+            <div class="form-group"><label for="bc-last">Last Name <span class="req">*</span></label><input type="text" id="bc-last" placeholder="Last name" required></div>
           </div>
-          <div class="form-group">
-            <label for="bc-phone">Phone <span class="req">*</span></label>
-            <input type="tel" id="bc-phone" placeholder="(417) 555-0100" required>
-          </div>
-          <div class="form-group">
-            <label for="bc-email">Email</label>
-            <input type="email" id="bc-email" placeholder="name@email.com">
-          </div>
-          <button type="submit" class="btn" id="buyerCreateBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Contact</span></div>
-          </button>
+          <div class="form-group"><label for="bc-phone">Phone <span class="req">*</span></label><input type="tel" id="bc-phone" placeholder="(417) 555-0100" required></div>
+          <div class="form-group"><label for="bc-email">Email</label><input type="email" id="bc-email" placeholder="name@email.com"></div>
+          <button type="submit" class="btn" id="buyerCreateBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Create Contact</span></div></button>
         </form>
       </div>
     </div>
 
-    <!-- BUYER: UNDER CONTRACT -->
     <div class="tool-page" id="tool-buyer-uc">
       <div class="card">
-
-        <!-- Contact Search -->
         <div class="section-label">Buyer Contact</div>
         <div class="form-group">
           <label for="buc-search">Search Contacts <span class="req">*</span></label>
-          <div class="search-wrap">
-            <input type="text" id="buc-search" placeholder="Start typing a name..." autocomplete="off">
-            <div class="search-results" id="bucResults"></div>
-          </div>
-          <div class="selected-contact" id="bucSelected">
-            <div><div class="sc-info" id="bucName"></div><div class="sc-phone" id="bucPhone"></div></div>
-            <button type="button" class="sc-clear" id="bucClear">✕</button>
-          </div>
+          <div class="search-wrap"><input type="text" id="buc-search" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="bucResults"></div></div>
+          <div class="selected-contact" id="bucSelected"><div><div class="sc-info" id="bucName"></div><div class="sc-phone" id="bucPhone"></div></div><button type="button" class="sc-clear" id="bucClear">✕</button></div>
         </div>
-
         <div class="divider"></div>
-
-        <!-- UC Sub-tabs -->
-        <div class="uc-tabs">
-          <button class="uc-tab-btn active" data-uc="buc-updates">Updates</button>
-          <button class="uc-tab-btn" data-uc="buc-dates">Date Inputs</button>
-        </div>
-
-        <!-- UPDATES PANEL -->
+        <div class="uc-tabs"><button class="uc-tab-btn active" data-uc="buc-updates">Updates</button><button class="uc-tab-btn" data-uc="buc-dates">Date Inputs</button></div>
         <div class="uc-panel active" id="buc-updates">
           <div class="section-label">Transaction Status</div>
-          <div class="form-group">
-            <label>Buyer Transactions</label>
+          <div class="form-group"><label>Buyer Transactions</label>
             <div class="radio-group" id="bucTransRadio">
               <div class="radio-opt" data-val="Documents Signed"><span class="radio-dot"></span>Documents Signed</div>
               <div class="radio-opt" data-val="Under Contract"><span class="radio-dot"></span>Under Contract</div>
@@ -935,756 +379,364 @@
               <div class="radio-opt" data-val="Closed"><span class="radio-dot"></span>Closed</div>
             </div>
           </div>
-
           <div class="divider"></div>
           <div class="section-label">Property Address</div>
-
-          <div class="form-group">
-            <label for="buc-street">Street Address</label>
-            <input type="text" id="buc-street" placeholder="123 Main St">
-          </div>
+          <div class="form-group"><label for="buc-street">Street Address</label><input type="text" id="buc-street" placeholder="123 Main St"></div>
           <div class="row">
-            <div class="form-group">
-              <label for="buc-city">City</label>
-              <input type="text" id="buc-city" placeholder="Springfield">
-            </div>
-            <div class="form-group">
-              <label for="buc-state">State</label>
-              <input type="text" id="buc-state" placeholder="MO">
-            </div>
+            <div class="form-group"><label for="buc-city">City</label><input type="text" id="buc-city" placeholder="Springfield"></div>
+            <div class="form-group"><label for="buc-state">State</label><input type="text" id="buc-state" placeholder="MO"></div>
           </div>
-          <div class="form-group">
-            <label for="buc-zip">Zip Code</label>
-            <input type="text" id="buc-zip" placeholder="65804">
-          </div>
-
+          <div class="form-group"><label for="buc-zip">Zip Code</label><input type="text" id="buc-zip" placeholder="65804"></div>
           <div class="divider"></div>
           <div class="section-label">Transaction Details</div>
-
-          <div class="form-group">
-            <label>Closing Gift Ordered</label>
-            <div class="yn-group">
-              <button type="button" class="yn-btn" data-yn="buc-gift" data-val="Yes">Yes</button>
-              <button type="button" class="yn-btn" data-yn="buc-gift" data-val="No">No</button>
-            </div>
-          </div>
-
+          <div class="form-group"><label>Closing Gift Ordered</label><div class="yn-group"><button type="button" class="yn-btn" data-yn="buc-gift" data-val="Yes">Yes</button><button type="button" class="yn-btn" data-yn="buc-gift" data-val="No">No</button></div></div>
           <div class="row">
-            <div class="form-group">
-              <label for="buc-commission">Commission Amount</label>
-              <input type="text" id="buc-commission" placeholder="e.g. 9750" inputmode="numeric">
-            </div>
-            <div class="form-group">
-              <label for="buc-sales">Sales Price</label>
-              <input type="text" id="buc-sales" placeholder="e.g. 325000" inputmode="numeric">
-            </div>
+            <div class="form-group"><label for="buc-commission">Commission Amount</label><input type="text" id="buc-commission" placeholder="e.g. 9750" inputmode="numeric"></div>
+            <div class="form-group"><label for="buc-sales">Sales Price</label><input type="text" id="buc-sales" placeholder="e.g. 325000" inputmode="numeric"></div>
           </div>
-
-          <button type="button" class="btn" id="bucUpdatesBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Updates</span></div>
-          </button>
+          <button type="button" class="btn" id="bucUpdatesBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Updates</span></div></button>
         </div>
-
-        <!-- DATE INPUTS PANEL -->
         <div class="uc-panel" id="buc-dates">
           <div class="section-label">Transaction Dates</div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="buc-uc-date">Under Contract Date</label>
-              <input type="date" id="buc-uc-date">
-            </div>
-            <div class="form-group">
-              <label for="buc-closing-date">Tentative Closing Date</label>
-              <input type="date" id="buc-closing-date">
-            </div>
+            <div class="form-group"><label for="buc-uc-date">Under Contract Date</label><input type="date" id="buc-uc-date"></div>
+            <div class="form-group"><label for="buc-closing-date">Tentative Closing Date</label><input type="date" id="buc-closing-date"></div>
           </div>
-
           <div class="divider"></div>
           <div class="section-label">Deadline Days</div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="buc-insp-days">Inspection Notice Days</label>
-              <input type="number" id="buc-insp-days" placeholder="e.g. 10" min="0">
-            </div>
-            <div class="form-group">
-              <label for="buc-insp-resp-days">Inspection Response Days</label>
-              <input type="number" id="buc-insp-resp-days" placeholder="e.g. 3" min="0">
-            </div>
+            <div class="form-group"><label for="buc-insp-days">Inspection Notice Days</label><input type="number" id="buc-insp-days" placeholder="e.g. 10" min="0"></div>
+            <div class="form-group"><label for="buc-insp-resp-days">Inspection Response Days</label><input type="number" id="buc-insp-resp-days" placeholder="e.g. 3" min="0"></div>
           </div>
-
           <div class="row">
-            <div class="form-group">
-              <label for="buc-appraisal-days">Appraisal Days</label>
-              <input type="number" id="buc-appraisal-days" placeholder="e.g. 21" min="0">
-            </div>
-            <div class="form-group">
-              <label for="buc-title-days">Title Days</label>
-              <input type="number" id="buc-title-days" placeholder="e.g. 15" min="0">
-            </div>
+            <div class="form-group"><label for="buc-appraisal-days">Appraisal Days</label><input type="number" id="buc-appraisal-days" placeholder="e.g. 21" min="0"></div>
+            <div class="form-group"><label for="buc-title-days">Title Days</label><input type="number" id="buc-title-days" placeholder="e.g. 15" min="0"></div>
           </div>
-
-          <div class="form-group">
-            <label for="buc-financial-days">Financial Days</label>
-            <input type="number" id="buc-financial-days" placeholder="e.g. 21" min="0">
-          </div>
-
-          <button type="button" class="btn" id="bucDatesBtn">
-            <div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Date Inputs</span></div>
-          </button>
+          <div class="form-group"><label for="buc-financial-days">Financial Days</label><input type="number" id="buc-financial-days" placeholder="e.g. 21" min="0"></div>
+          <button type="button" class="btn" id="bucDatesBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text">Save Date Inputs</span></div></button>
         </div>
-
       </div>
     </div>
 
-  </div><!-- /sub-buyer -->
+    <div class="tool-page" id="tool-buyer-deadlines">
+      <div class="card">
+        <div class="section-label">Buyer Contact</div>
+        <div class="form-group">
+          <label for="bdl-search">Search Contacts <span class="req">*</span></label>
+          <div class="search-wrap"><input type="text" id="bdl-search" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="bdlResults"></div></div>
+          <div class="selected-contact" id="bdlSelected"><div><div class="sc-info" id="bdlName"></div><div class="sc-phone" id="bdlPhone"></div></div><button type="button" class="sc-clear" id="bdlClear">✕</button></div>
+        </div>
+        <div class="divider"></div>
+        <div class="section-label">Transaction Deadlines</div>
+        <div id="bdlDeadlines"><div class="dl-empty">Search for a contact above to view their deadlines.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-</div><!-- /page-contacts -->
+<!-- TAB 2: CALENDAR -->
+<div class="tab-page" id="page-calendar">
+  <div class="card" style="width:100%;">
+    <div class="cal-header">
+      <div class="cal-month-label" id="calMonthLabel"></div>
+      <div class="cal-nav">
+        <button class="cal-nav-btn" id="calPrev">&#8249;</button>
+        <button class="cal-nav-btn" id="calNext">&#8250;</button>
+      </div>
+    </div>
+    <div class="cal-grid">
+      <div class="cal-day-hdr">Sun</div><div class="cal-day-hdr">Mon</div><div class="cal-day-hdr">Tue</div>
+      <div class="cal-day-hdr">Wed</div><div class="cal-day-hdr">Thu</div><div class="cal-day-hdr">Fri</div><div class="cal-day-hdr">Sat</div>
+    </div>
+    <div class="cal-grid" id="calCells" style="margin-top:4px;"></div>
+    <div id="calStatus" class="cal-status"></div>
+    <div class="cal-legend">
+      <div class="legend-item"><div class="legend-dot ev-urgent"></div>Due within 3 days</div>
+      <div class="legend-item"><div class="legend-dot ev-soon"></div>Due within 7 days</div>
+      <div class="legend-item"><div class="legend-dot ev-ok"></div>On track</div>
+      <div class="legend-item"><div class="legend-dot ev-closing"></div>Closing date</div>
+    </div>
+  </div>
+</div>
 
-<!-- ════════════ TAB 2: SCHEDULED MESSAGES ════════════ -->
+<!-- TAB 3: SCHEDULED MESSAGES -->
 <div class="tab-page" id="page-messages">
-<div class="card">
-  <div class="editing-banner" id="editingBanner">
-    <span>✏️ Editing scheduled message</span>
-    <button class="eb-cancel" id="editCancelBtn" type="button">cancel edit</button>
-  </div>
-
-  <form id="messageForm">
-    <div class="section-label">Contact</div>
-    <div class="form-group">
-      <label for="contactSearch">Search Contacts <span class="req">*</span></label>
-      <div class="search-wrap">
-        <input type="text" id="contactSearch" placeholder="Start typing a name..." autocomplete="off">
-        <div class="search-results" id="searchResults"></div>
-      </div>
-      <div class="selected-contact" id="selectedContact">
-        <div><div class="sc-info" id="scName"></div><div class="sc-phone" id="scPhone"></div></div>
-        <button type="button" class="sc-clear" id="scClear">✕</button>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="section-label">Message</div>
-    <div class="form-group">
-      <label for="msgText">Message Text <span class="req">*</span></label>
-      <textarea id="msgText" placeholder="Type the message to send..." required></textarea>
-      <div class="char-count" id="charCount">0 / 320</div>
-    </div>
-    <div class="divider"></div>
-    <div class="section-label">Send Time</div>
-    <div class="row">
+  <div class="card">
+    <div class="editing-banner" id="editingBanner"><span>Editing scheduled message</span><button class="eb-cancel" id="editCancelBtn" type="button">cancel edit</button></div>
+    <form id="messageForm">
+      <div class="section-label">Contact</div>
       <div class="form-group">
-        <label for="sendDate">Date <span class="req">*</span></label>
-        <input type="date" id="sendDate" required>
+        <label for="contactSearch">Search Contacts <span class="req">*</span></label>
+        <div class="search-wrap"><input type="text" id="contactSearch" placeholder="Start typing a name..." autocomplete="off"><div class="search-results" id="searchResults"></div></div>
+        <div class="selected-contact" id="selectedContact"><div><div class="sc-info" id="scName"></div><div class="sc-phone" id="scPhone"></div></div><button type="button" class="sc-clear" id="scClear">✕</button></div>
       </div>
-      <div class="form-group">
-        <label for="sendTime">Time <span class="req">*</span></label>
-        <input type="time" id="sendTime" required>
+      <div class="divider"></div>
+      <div class="section-label">Message</div>
+      <div class="form-group"><label for="msgText">Message Text <span class="req">*</span></label><textarea id="msgText" placeholder="Type the message to send..." required></textarea><div class="char-count" id="charCount">0 / 320</div></div>
+      <div class="divider"></div>
+      <div class="section-label">Send Time</div>
+      <div class="row">
+        <div class="form-group"><label for="sendDate">Date <span class="req">*</span></label><input type="date" id="sendDate" required></div>
+        <div class="form-group"><label for="sendTime">Time <span class="req">*</span></label><input type="time" id="sendTime" required></div>
       </div>
-    </div>
-    <button type="submit" class="btn" id="scheduleBtn">
-      <div class="btn-inner"><div class="spinner"></div><span class="btn-text" id="scheduleBtnText">Schedule Message</span></div>
-    </button>
-  </form>
-</div>
-
-<div class="card queue-card">
-  <div class="queue-header">
-    <div class="queue-title">Pending Queue</div>
-    <button class="refresh-btn" id="refreshQueue" type="button">↻ Refresh</button>
+      <button type="submit" class="btn" id="scheduleBtn"><div class="btn-inner"><div class="spinner"></div><span class="btn-text" id="scheduleBtnText">Schedule Message</span></div></button>
+    </form>
   </div>
-  <div id="pendingList"><div class="queue-empty">Loading...</div></div>
-</div>
-
-<div class="card queue-card">
-  <div class="queue-header"><div class="queue-title">Recently Sent</div></div>
-  <div id="sentList"><div class="queue-empty">Loading...</div></div>
-</div>
+  <div class="card queue-card">
+    <div class="queue-header"><div class="queue-title">Pending Queue</div><button class="refresh-btn" id="refreshQueue" type="button">&#8635; Refresh</button></div>
+    <div id="pendingList"><div class="queue-empty">Loading...</div></div>
+  </div>
+  <div class="card queue-card">
+    <div class="queue-header"><div class="queue-title">Recently Sent</div></div>
+    <div id="sentList"><div class="queue-empty">Loading...</div></div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-  // ── CONFIG ──────────────────────────────────────────────────
   const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/jbbbmfkw9q1ik1p4oz3racpi81cnvyh1';
   const SHEET_ID = '1KlfQEU02BcEM9RUTTi64-Eu60UzuaptT_EjE6OAXKOY';
   const API_KEY  = 'AIzaSyD6mLXltjqMao1Ej0cALICxUGScHB5IKbE';
   const SMS_WEBHOOK_URL = 'https://hook.us2.make.com/uwlbkbmgcdoz8hg6hp7fac19x8vm6lfh';
-  // ────────────────────────────────────────────────────────────
 
   const toast = document.getElementById('toast');
+  function showToast(msg, isError=false) { toast.textContent=msg; toast.className='toast show'+(isError?' error':''); setTimeout(()=>{toast.className='toast';},4000); }
+  function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function formatWhen(d,t){if(!d)return'';try{const dt=new Date(`${d}T${t||'00:00'}`);const dp=dt.toLocaleDateString('en-US',{month:'short',day:'numeric'});const tp=t?dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}):'';return tp?`${dp} · ${tp}`:dp;}catch{return`${d} ${t||''}`;}}
 
-  function showToast(msg, isError = false) {
-    toast.textContent = msg;
-    toast.className = 'toast show' + (isError ? ' error' : '');
-    setTimeout(() => { toast.className = 'toast'; }, 4000);
-  }
-
-  // ── MAIN TAB SWITCHING ──────────────────────────────────────
-  const pageTitle = document.getElementById('pageTitle');
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-page').forEach(p => p.classList.remove('active'));
+  // MAIN TAB SWITCHING
+  const pageTitle=document.getElementById('pageTitle');
+  const pageTitles={contacts:'Contacts',calendar:'Calendar',messages:'Scheduled Messages'};
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-page').forEach(p=>p.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('page-' + btn.dataset.tab).classList.add('active');
-      pageTitle.textContent = btn.dataset.tab === 'contacts' ? 'Contacts' : 'Scheduled Messages';
-      if (btn.dataset.tab === 'messages') loadQueue();
+      document.getElementById('page-'+btn.dataset.tab).classList.add('active');
+      pageTitle.textContent=pageTitles[btn.dataset.tab]||'';
+      if(btn.dataset.tab==='messages') loadQueue();
+      if(btn.dataset.tab==='calendar') renderCalendar();
     });
   });
 
-  // ── SELLER / BUYER SUB-TAB SWITCHING ────────────────────────
-  document.querySelectorAll('.sub-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.sub-page').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('sub-' + btn.dataset.sub).classList.add('active');
-    });
-  });
+  document.querySelectorAll('.sub-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.sub-page').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('sub-'+btn.dataset.sub).classList.add('active');});});
+  document.querySelectorAll('.pill-tabs').forEach(group=>{group.querySelectorAll('.pill-btn').forEach(btn=>{btn.addEventListener('click',()=>{group.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const sp=group.closest('.sub-page');sp.querySelectorAll('.tool-page').forEach(p=>p.classList.remove('active'));document.getElementById('tool-'+btn.dataset.tool).classList.add('active');});});});
+  document.querySelectorAll('.uc-tabs').forEach(group=>{group.querySelectorAll('.uc-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{group.querySelectorAll('.uc-tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const card=group.closest('.card');card.querySelectorAll('.uc-panel').forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.uc).classList.add('active');});});});
+  document.querySelectorAll('.radio-group').forEach(group=>{group.querySelectorAll('.radio-opt').forEach(opt=>{opt.addEventListener('click',()=>{group.querySelectorAll('.radio-opt').forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');});});});
+  function getRadioVal(id){const s=document.querySelector('#'+id+' .radio-opt.selected');return s?s.dataset.val:'';}
+  document.querySelectorAll('.yn-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.yn-btn[data-yn="'+btn.dataset.yn+'"]').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');});});
+  function getYNVal(g){const s=document.querySelector('.yn-btn[data-yn="'+g+'"].selected');return s?s.dataset.val:'';}
 
-  // ── TOOL PILL SWITCHING ──────────────────────────────────────
-  document.querySelectorAll('.pill-tabs').forEach(group => {
-    group.querySelectorAll('.pill-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        group.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const subPage = group.closest('.sub-page');
-        subPage.querySelectorAll('.tool-page').forEach(p => p.classList.remove('active'));
-        document.getElementById('tool-' + btn.dataset.tool).classList.add('active');
-      });
-    });
-  });
-
-  // ── UC SUB-TAB SWITCHING (Updates / Date Inputs) ──────────
-  document.querySelectorAll('.uc-tabs').forEach(group => {
-    group.querySelectorAll('.uc-tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        group.querySelectorAll('.uc-tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const card = group.closest('.card');
-        card.querySelectorAll('.uc-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById(btn.dataset.uc).classList.add('active');
-      });
-    });
-  });
-
-  // ── RADIO GROUPS ─────────────────────────────────────────────
-  document.querySelectorAll('.radio-group').forEach(group => {
-    group.querySelectorAll('.radio-opt').forEach(opt => {
-      opt.addEventListener('click', () => {
-        group.querySelectorAll('.radio-opt').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-      });
-    });
-  });
-
-  function getRadioVal(groupId) {
-    const sel = document.querySelector(`#${groupId} .radio-opt.selected`);
-    return sel ? sel.dataset.val : '';
-  }
-
-  // ── YES/NO TOGGLES ────────────────────────────────────────────
-  document.querySelectorAll('.yn-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const group = btn.dataset.yn;
-      document.querySelectorAll(`.yn-btn[data-yn="${group}"]`).forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-    });
-  });
-
-  function getYNVal(group) {
-    const sel = document.querySelector(`.yn-btn[data-yn="${group}"].selected`);
-    return sel ? sel.dataset.val : '';
-  }
-
-  // ── GENERIC CONTACT SEARCH ────────────────────────────────────
-  function makeContactSearch({ inputId, resultsId, selectedId, nameId, phoneId, clearId, onSelect }) {
-    const input    = document.getElementById(inputId);
-    const results  = document.getElementById(resultsId);
-    const selBox   = document.getElementById(selectedId);
-    const nameEl   = document.getElementById(nameId);
-    const phoneEl  = document.getElementById(phoneId);
-    const clearBtn = document.getElementById(clearId);
-    let timer = null;
-    let contactData = null;
-
-    input.addEventListener('input', () => {
-      clearTimeout(timer);
-      const q = input.value.trim();
-      if (q.length < 2) { results.classList.remove('show'); return; }
-      timer = setTimeout(() => doSearch(q), 350);
-    });
-
-    async function doSearch(query) {
-      try {
-        const res  = await fetch(`/.netlify/functions/search-contacts?query=${encodeURIComponent(query)}`);
-        const data = await res.json();
-        const contacts = data.contacts || [];
-        results.innerHTML = '';
-        if (contacts.length === 0) {
-          results.innerHTML = '<div class="search-result"><div class="sr-name">No contacts found</div></div>';
-        } else {
-          contacts.forEach(c => {
-            const name  = `${c.firstName || ''} ${c.lastName || ''}`.trim() || c.contactName || 'Unnamed';
-            const phone = c.phone || '';
-            const div = document.createElement('div');
-            div.className = 'search-result';
-            div.innerHTML = `<div class="sr-name">${name}</div><div class="sr-phone">${phone || 'No phone on file'}</div>`;
-            div.addEventListener('click', () => {
-              contactData = { name, contactId: c.id, phone };
-              nameEl.textContent  = name;
-              phoneEl.textContent = phone;
-              selBox.classList.add('show');
-              results.classList.remove('show');
-              input.value = '';
-              if (onSelect) onSelect(contactData);
-            });
-            results.appendChild(div);
-          });
-        }
+  // GENERIC CONTACT SEARCH
+  function makeContactSearch({inputId,resultsId,selectedId,nameId,phoneId,clearId,onSelect}){
+    const input=document.getElementById(inputId),results=document.getElementById(resultsId);
+    const selBox=document.getElementById(selectedId),nameEl=document.getElementById(nameId);
+    const phoneEl=document.getElementById(phoneId),clearBtn=document.getElementById(clearId);
+    let timer=null,contactData=null;
+    input.addEventListener('input',()=>{clearTimeout(timer);const q=input.value.trim();if(q.length<2){results.classList.remove('show');return;}timer=setTimeout(()=>doSearch(q),350);});
+    async function doSearch(query){
+      try{
+        const res=await fetch('/.netlify/functions/search-contacts?query='+encodeURIComponent(query));
+        const data=await res.json();const contacts=data.contacts||[];
+        results.innerHTML='';
+        if(!contacts.length){results.innerHTML='<div class="search-result"><div class="sr-name">No contacts found</div></div>';}
+        else{contacts.forEach(c=>{const name=(c.firstName||'')+' '+(c.lastName||'');const nm=name.trim()||c.contactName||'Unnamed';const phone=c.phone||'';const div=document.createElement('div');div.className='search-result';div.innerHTML='<div class="sr-name">'+esc(nm)+'</div><div class="sr-phone">'+(phone||'No phone on file')+'</div>';div.addEventListener('click',()=>{contactData={name:nm,contactId:c.id,phone};nameEl.textContent=nm;phoneEl.textContent=phone;selBox.classList.add('show');results.classList.remove('show');input.value='';if(onSelect)onSelect(contactData);});results.appendChild(div);});}
         results.classList.add('show');
-      } catch (err) {
-        console.error(err);
-        showToast('Contact search failed. Try again.', true);
-      }
+      }catch(err){console.error(err);showToast('Contact search failed. Try again.',true);}
     }
-
-    clearBtn.addEventListener('click', () => {
-      contactData = null;
-      selBox.classList.remove('show');
-    });
-
-    return { getContact: () => contactData };
+    clearBtn.addEventListener('click',()=>{contactData=null;selBox.classList.remove('show');});
+    return{getContact:()=>contactData};
   }
 
-  // ── CREATE CONTACT (shared handler) ──────────────────────────
-  async function createContact({ first, last, phone, email, btn, form }) {
-    if (!first || !last) { showToast('First and last name are required.', true); return; }
-    if (!phone) { showToast('Phone is required.', true); return; }
-    btn.disabled = true;
-    btn.classList.add('loading');
-    try {
-      const res  = await fetch('/.netlify/functions/create-contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName: first, lastName: last, phone, email })
-      });
-      const data = await res.json();
-      if (!res.ok) { showToast(data.error || 'Could not create contact.', true); return; }
-      showToast(data.isNew ? '✓ Contact created!' : '✓ Contact already existed — updated.');
-      form.reset();
-    } catch (err) {
-      showToast('Something went wrong. Try again.', true);
-      console.error(err);
-    } finally {
-      btn.disabled = false;
-      btn.classList.remove('loading');
-    }
+  // CREATE CONTACT
+  async function createContact({first,last,phone,email,btn,form}){
+    if(!first||!last){showToast('First and last name are required.',true);return;}
+    if(!phone){showToast('Phone is required.',true);return;}
+    btn.disabled=true;btn.classList.add('loading');
+    try{const res=await fetch('/.netlify/functions/create-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:first,lastName:last,phone,email})});const data=await res.json();if(!res.ok){showToast(data.error||'Could not create contact.',true);return;}showToast(data.isNew?'Contact created!':'Contact already existed — updated.');form.reset();}
+    catch(err){showToast('Something went wrong. Try again.',true);console.error(err);}
+    finally{btn.disabled=false;btn.classList.remove('loading');}
   }
+  document.getElementById('sellerCreateForm').addEventListener('submit',e=>{e.preventDefault();createContact({first:document.getElementById('sc-first').value.trim(),last:document.getElementById('sc-last').value.trim(),phone:document.getElementById('sc-phone').value.trim(),email:document.getElementById('sc-email').value.trim(),btn:document.getElementById('sellerCreateBtn'),form:document.getElementById('sellerCreateForm')});});
+  document.getElementById('buyerCreateForm').addEventListener('submit',e=>{e.preventDefault();createContact({first:document.getElementById('bc-first').value.trim(),last:document.getElementById('bc-last').value.trim(),phone:document.getElementById('bc-phone').value.trim(),email:document.getElementById('bc-email').value.trim(),btn:document.getElementById('buyerCreateBtn'),form:document.getElementById('buyerCreateForm')});});
 
-  document.getElementById('sellerCreateForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    createContact({ first: document.getElementById('sc-first').value.trim(), last: document.getElementById('sc-last').value.trim(), phone: document.getElementById('sc-phone').value.trim(), email: document.getElementById('sc-email').value.trim(), btn: document.getElementById('sellerCreateBtn'), form: document.getElementById('sellerCreateForm') });
+  // NEW LISTING
+  const lsSearch=makeContactSearch({inputId:'ls-search',resultsId:'lsResults',selectedId:'lsSelected',nameId:'lsName',phoneId:'lsPhone',clearId:'lsClear'});
+  const listingForm=document.getElementById('listingForm'),listingBtn=document.getElementById('listingBtn');
+  listingForm.addEventListener('submit',async e=>{
+    e.preventDefault();const contact=lsSearch.getContact();if(!contact){showToast('Please select a seller contact.',true);return;}
+    const street=document.getElementById('ls-street').value.trim(),city=document.getElementById('ls-city').value.trim(),state=document.getElementById('ls-state').value.trim(),zip=document.getElementById('ls-zip').value.trim(),price=document.getElementById('ls-price').value.trim(),side=document.getElementById('ls-side').value,liveDate=document.getElementById('ls-livedate').value;
+    if(!street||!city||!state||!zip){showToast('All address fields are required.',true);return;}
+    if(!side){showToast('Please select the represented side.',true);return;}
+    if(!liveDate){showToast('Please pick the listing live date.',true);return;}
+    if(!confirm('Set '+contact.name+' to Listing Live?\n\nThis will email the seller, move them in the pipeline, and add the listing to the sheet.'))return;
+    listingBtn.disabled=true;listingBtn.classList.add('loading');
+    try{const res=await fetch('/.netlify/functions/update-listing',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contactId:contact.contactId,street,city,state,zip,price,side,liveDate})});const data=await res.json();if(!res.ok){showToast(data.error||'Could not create the listing.',true);return;}showToast('Listing is live!');listingForm.reset();document.getElementById('ls-livedate').value=new Date().toISOString().split('T')[0];}
+    catch(err){showToast('Something went wrong. Try again.',true);console.error(err);}
+    finally{listingBtn.disabled=false;listingBtn.classList.remove('loading');}
   });
 
-  document.getElementById('buyerCreateForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    createContact({ first: document.getElementById('bc-first').value.trim(), last: document.getElementById('bc-last').value.trim(), phone: document.getElementById('bc-phone').value.trim(), email: document.getElementById('bc-email').value.trim(), btn: document.getElementById('buyerCreateBtn'), form: document.getElementById('buyerCreateForm') });
-  });
-
-  // ── NEW LISTING ───────────────────────────────────────────────
-  const lsSearch  = makeContactSearch({ inputId: 'ls-search', resultsId: 'lsResults', selectedId: 'lsSelected', nameId: 'lsName', phoneId: 'lsPhone', clearId: 'lsClear' });
-  const listingForm = document.getElementById('listingForm');
-  const listingBtn  = document.getElementById('listingBtn');
-
-  listingForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const contact = lsSearch.getContact();
-    if (!contact) { showToast('Please select a seller contact.', true); return; }
-    const street   = document.getElementById('ls-street').value.trim();
-    const city     = document.getElementById('ls-city').value.trim();
-    const state    = document.getElementById('ls-state').value.trim();
-    const zip      = document.getElementById('ls-zip').value.trim();
-    const price    = document.getElementById('ls-price').value.trim();
-    const side     = document.getElementById('ls-side').value;
-    const liveDate = document.getElementById('ls-livedate').value;
-    if (!street || !city || !state || !zip) { showToast('All address fields are required.', true); return; }
-    if (!side) { showToast('Please select the represented side.', true); return; }
-    if (!liveDate) { showToast('Please pick the listing live date.', true); return; }
-    const ok = confirm(`Set ${contact.name} to Listing Live?\n\nThis will email the seller, move them in the pipeline, and add the listing to the sheet.`);
-    if (!ok) return;
-    listingBtn.disabled = true;
-    listingBtn.classList.add('loading');
-    try {
-      const res  = await fetch('/.netlify/functions/update-listing', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contactId: contact.contactId, street, city, state, zip, price, side, liveDate }) });
-      const data = await res.json();
-      if (!res.ok) { showToast(data.error || 'Could not create the listing.', true); return; }
-      showToast('✓ Listing is live!');
-      listingForm.reset();
-      document.getElementById('ls-livedate').value = new Date().toISOString().split('T')[0];
-    } catch (err) {
-      showToast('Something went wrong. Try again.', true);
-      console.error(err);
-    } finally {
-      listingBtn.disabled = false;
-      listingBtn.classList.remove('loading');
-    }
-  });
-
-  // ── SHOWING INTAKE ─────────────────────────────────────────────
-  const listingSelect  = document.getElementById('listing');
-  const listingLoading = document.getElementById('listingLoading');
-  const showingForm    = document.getElementById('showingForm');
-  const submitBtn      = document.getElementById('submitBtn');
-  let listingsData = [];
-
-  async function loadListings() {
-    try {
-      const range = encodeURIComponent('Active Listings!A:N');
-      const url   = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`;
-      const res   = await fetch(url);
-      const data  = await res.json();
-      const rows  = data.values || [];
-      const headers   = rows[0];
-      const activeIdx = headers.indexOf('Active');
-      const firstIdx  = headers.indexOf('First Name');
-      const lastIdx   = headers.indexOf('Last Name');
-      const addrIdx   = headers.indexOf('Address');
-      listingsData = rows.slice(1).filter(row => row[activeIdx] === 'Yes' && row[addrIdx]);
-      listingLoading.style.display = 'none';
-      listingSelect.style.display  = 'block';
-      listingsData.forEach((row, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        const sellerName = `${row[firstIdx]} ${row[lastIdx]}`.trim();
-        const address    = row[addrIdx] && row[addrIdx] !== ',' ? row[addrIdx] : '';
-        opt.textContent  = address ? `${address} — ${sellerName}` : sellerName;
-        listingSelect.appendChild(opt);
-      });
-    } catch (err) {
-      listingLoading.textContent = 'Could not load listings. Refresh and try again.';
-      console.error(err);
-    }
+  // SHOWING INTAKE
+  const listingSelect=document.getElementById('listing'),listingLoading=document.getElementById('listingLoading');
+  const showingForm=document.getElementById('showingForm'),submitBtn=document.getElementById('submitBtn');
+  let listingsData=[];
+  async function loadListings(){
+    try{const res=await fetch('https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values/'+encodeURIComponent('Active Listings!A:N')+'?key='+API_KEY);const data=await res.json();const rows=data.values||[];const h=rows[0];const ai=h.indexOf('Active'),fi=h.indexOf('First Name'),li=h.indexOf('Last Name'),adi=h.indexOf('Address');listingsData=rows.slice(1).filter(r=>r[ai]==='Yes'&&r[adi]);listingLoading.style.display='none';listingSelect.style.display='block';listingsData.forEach((row,i)=>{const opt=document.createElement('option');opt.value=i;const nm=(row[fi]||'')+' '+(row[li]||'');const addr=row[adi]&&row[adi]!==','?row[adi]:'';opt.textContent=addr?addr+' — '+nm.trim():nm.trim();listingSelect.appendChild(opt);});}
+    catch(err){listingLoading.textContent='Could not load listings. Refresh and try again.';console.error(err);}
   }
-
   loadListings();
-
-  showingForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const idx = listingSelect.value;
-    if (idx === '') { showToast('Please select a listing.', true); return; }
-    const row     = listingsData[idx];
-    const headers = ['First Name','Last Name','Address','Phone','Seller Email','List Date','DOM','List Price','Price Reductions','Showing Count','Update Summary','Active','Last Week Showing Count','GHL Contact ID'];
-    const get = (h) => { const i = headers.indexOf(h); return i >= 0 ? (row[i] || '') : ''; };
-    const payload = { seller_first_name: get('First Name'), seller_last_name: get('Last Name'), seller_address: get('Address'), seller_phone: get('Phone'), seller_email: get('Seller Email'), seller_contact_id: get('GHL Contact ID'), agent_name: document.getElementById('agentName').value.trim(), agent_phone: document.getElementById('agentPhone').value.trim(), agent_email: document.getElementById('agentEmail').value.trim(), showing_date: document.getElementById('showingDate').value, showing_time: document.getElementById('showingTime').value, intake_source: 'Tanya' };
-    submitBtn.disabled = true;
-    submitBtn.classList.add('loading');
-    try {
-      await fetch(MAKE_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      showToast('✓ Showing logged successfully!');
-      showingForm.reset();
-      listingSelect.value = '';
-      document.getElementById('showingDate').value = new Date().toISOString().split('T')[0];
-    } catch (err) {
-      showToast('Something went wrong. Try again.', true);
-      console.error(err);
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.classList.remove('loading');
-    }
+  showingForm.addEventListener('submit',async e=>{
+    e.preventDefault();const idx=listingSelect.value;if(idx===''){showToast('Please select a listing.',true);return;}
+    const row=listingsData[idx];const headers=['First Name','Last Name','Address','Phone','Seller Email','List Date','DOM','List Price','Price Reductions','Showing Count','Update Summary','Active','Last Week Showing Count','GHL Contact ID'];
+    const get=h=>{const i=headers.indexOf(h);return i>=0?(row[i]||''):'';};
+    const payload={seller_first_name:get('First Name'),seller_last_name:get('Last Name'),seller_address:get('Address'),seller_phone:get('Phone'),seller_email:get('Seller Email'),seller_contact_id:get('GHL Contact ID'),agent_name:document.getElementById('agentName').value.trim(),agent_phone:document.getElementById('agentPhone').value.trim(),agent_email:document.getElementById('agentEmail').value.trim(),showing_date:document.getElementById('showingDate').value,showing_time:document.getElementById('showingTime').value,intake_source:'Tanya'};
+    submitBtn.disabled=true;submitBtn.classList.add('loading');
+    try{await fetch(MAKE_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});showToast('Showing logged successfully!');showingForm.reset();listingSelect.value='';document.getElementById('showingDate').value=new Date().toISOString().split('T')[0];}
+    catch(err){showToast('Something went wrong. Try again.',true);console.error(err);}
+    finally{submitBtn.disabled=false;submitBtn.classList.remove('loading');}
   });
 
-  // ── SELLER UNDER CONTRACT ──────────────────────────────────────
-  const sucSearch = makeContactSearch({ inputId: 'suc-search', resultsId: 'sucResults', selectedId: 'sucSelected', nameId: 'sucName', phoneId: 'sucPhone', clearId: 'sucClear' });
-
-  async function submitUC({ side, contactId, payload, btn }) {
-    if (!contactId) { showToast('Please select a contact first.', true); return; }
-    btn.disabled = true;
-    btn.classList.add('loading');
-    try {
-      const res  = await fetch('/.netlify/functions/update-contract', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contactId, side, ...payload }) });
-      const data = await res.json();
-      if (!res.ok) { showToast(data.error || 'Could not save. Try again.', true); return; }
-      showToast('✓ Saved to GHL!');
-    } catch (err) {
-      showToast('Something went wrong. Try again.', true);
-      console.error(err);
-    } finally {
-      btn.disabled = false;
-      btn.classList.remove('loading');
-    }
+  // UNDER CONTRACT
+  const sucSearch=makeContactSearch({inputId:'suc-search',resultsId:'sucResults',selectedId:'sucSelected',nameId:'sucName',phoneId:'sucPhone',clearId:'sucClear'});
+  const bucSearch=makeContactSearch({inputId:'buc-search',resultsId:'bucResults',selectedId:'bucSelected',nameId:'bucName',phoneId:'bucPhone',clearId:'bucClear'});
+  async function submitUC({side,contactId,payload,btn}){
+    if(!contactId){showToast('Please select a contact first.',true);return;}
+    btn.disabled=true;btn.classList.add('loading');
+    try{const res=await fetch('/.netlify/functions/update-contract',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contactId,side,...payload})});const data=await res.json();if(!res.ok){showToast(data.error||'Could not save. Try again.',true);return;}showToast('Saved to GHL!');}
+    catch(err){showToast('Something went wrong. Try again.',true);console.error(err);}
+    finally{btn.disabled=false;btn.classList.remove('loading');}
   }
+  document.getElementById('sucUpdatesBtn').addEventListener('click',()=>{const c=sucSearch.getContact();submitUC({side:'seller',contactId:c?.contactId,payload:{transactions:getRadioVal('sucTransRadio'),closing_gift_ordered:getYNVal('suc-gift'),commission_amount:document.getElementById('suc-commission').value.trim(),sales_price:document.getElementById('suc-sales').value.trim()},btn:document.getElementById('sucUpdatesBtn')});});
+  document.getElementById('sucDatesBtn').addEventListener('click',()=>{const c=sucSearch.getContact();submitUC({side:'seller',contactId:c?.contactId,payload:{under_contract_date:document.getElementById('suc-uc-date').value,tentative_closing_date:document.getElementById('suc-closing-date').value,inspection_notice_days:document.getElementById('suc-insp-days').value,inspection_notice_resp:document.getElementById('suc-insp-resp-days').value,appraisal_days:document.getElementById('suc-appraisal-days').value,title_days:document.getElementById('suc-title-days').value,financial_days:document.getElementById('suc-financial-days').value},btn:document.getElementById('sucDatesBtn')});});
+  document.getElementById('bucUpdatesBtn').addEventListener('click',()=>{const c=bucSearch.getContact();submitUC({side:'buyer',contactId:c?.contactId,payload:{transactions:getRadioVal('bucTransRadio'),street:document.getElementById('buc-street').value.trim(),city:document.getElementById('buc-city').value.trim(),state:document.getElementById('buc-state').value.trim(),zip:document.getElementById('buc-zip').value.trim(),closing_gift_ordered:getYNVal('buc-gift'),commission_amount:document.getElementById('buc-commission').value.trim(),sales_price:document.getElementById('buc-sales').value.trim()},btn:document.getElementById('bucUpdatesBtn')});});
+  document.getElementById('bucDatesBtn').addEventListener('click',()=>{const c=bucSearch.getContact();submitUC({side:'buyer',contactId:c?.contactId,payload:{under_contract_date:document.getElementById('buc-uc-date').value,tentative_closing_date:document.getElementById('buc-closing-date').value,inspection_notice_days:document.getElementById('buc-insp-days').value,inspection_notice_resp:document.getElementById('buc-insp-resp-days').value,appraisal_days:document.getElementById('buc-appraisal-days').value,title_days:document.getElementById('buc-title-days').value,financial_days:document.getElementById('buc-financial-days').value},btn:document.getElementById('bucDatesBtn')});});
 
-  document.getElementById('sucUpdatesBtn').addEventListener('click', () => {
-    const contact = sucSearch.getContact();
-    submitUC({
-      side: 'seller',
-      contactId: contact?.contactId,
-      payload: {
-        transactions:         getRadioVal('sucTransRadio'),
-        closing_gift_ordered: getYNVal('suc-gift'),
-        commission_amount:    document.getElementById('suc-commission').value.trim(),
-        sales_price:          document.getElementById('suc-sales').value.trim(),
-      },
-      btn: document.getElementById('sucUpdatesBtn'),
-    });
-  });
+  // DEADLINES (contact-level)
+  function daysOut(dateStr){if(!dateStr)return null;const today=new Date();today.setHours(0,0,0,0);const d=new Date(dateStr+'T00:00:00');return Math.round((d-today)/86400000);}
+  function fmtDate(dateStr){if(!dateStr)return'';const d=new Date(dateStr+'T00:00:00');return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});}
+  function rowCls(days,isClosing){if(isClosing)return'closing';if(days===null)return'';if(days<=3)return'urgent';if(days<=7)return'soon';return'';}
+  function badgeCls(days,isClosing){if(isClosing)return'badge-closing';if(days===null)return'';if(days<=3)return'badge-urgent';if(days<=7)return'badge-soon';return'badge-ok';}
+  function badgeTxt(days,isClosing){if(isClosing)return'Closing';if(days===null)return'';if(days<0)return Math.abs(days)+'d overdue';if(days===0)return'Today';return days+'d';}
+  async function loadDeadlines(contactId,containerId){
+    const container=document.getElementById(containerId);
+    container.innerHTML='<div class="dl-loading">Loading deadlines...</div>';
+    try{
+      const res=await fetch('/.netlify/functions/get-calendar?contactId='+contactId);
+      const data=await res.json();const appts=data.appointments||[];
+      if(!appts.length){container.innerHTML='<div class="dl-empty">No upcoming deadlines found for this contact.</div>';return;}
+      appts.sort((a,b)=>new Date(a.startTime)-new Date(b.startTime));
+      const list=document.createElement('div');list.className='deadline-list';
+      appts.forEach(appt=>{
+        const dateStr=appt.startTime?(appt.startTime.split('T')[0]):'';
+        const days=daysOut(dateStr);const isClosing=(appt.title||'').toLowerCase().includes('closing');
+        const rc=rowCls(days,isClosing);
+        const row=document.createElement('div');row.className='deadline-row'+(rc?' '+rc:'');
+        row.innerHTML='<div class="dl-label">'+esc(appt.title||'Appointment')+'</div><div class="dl-right"><div class="dl-date">'+fmtDate(dateStr)+'</div>'+(days!==null?'<div class="dl-badge '+badgeCls(days,isClosing)+'">'+badgeTxt(days,isClosing)+'</div>':'')+'</div>';
+        list.appendChild(row);
+      });
+      container.appendChild(list);
+    }catch(err){console.error(err);container.innerHTML='<div class="dl-empty">Could not load deadlines. Try again.</div>';}
+  }
+  const sdlSearch=makeContactSearch({inputId:'sdl-search',resultsId:'sdlResults',selectedId:'sdlSelected',nameId:'sdlName',phoneId:'sdlPhone',clearId:'sdlClear',onSelect:c=>loadDeadlines(c.contactId,'sdlDeadlines')});
+  const bdlSearch=makeContactSearch({inputId:'bdl-search',resultsId:'bdlResults',selectedId:'bdlSelected',nameId:'bdlName',phoneId:'bdlPhone',clearId:'bdlClear',onSelect:c=>loadDeadlines(c.contactId,'bdlDeadlines')});
+  document.getElementById('sdlClear').addEventListener('click',()=>{document.getElementById('sdlDeadlines').innerHTML='<div class="dl-empty">Search for a contact above to view their deadlines.</div>';});
+  document.getElementById('bdlClear').addEventListener('click',()=>{document.getElementById('bdlDeadlines').innerHTML='<div class="dl-empty">Search for a contact above to view their deadlines.</div>';});
 
-  document.getElementById('sucDatesBtn').addEventListener('click', () => {
-    const contact = sucSearch.getContact();
-    submitUC({
-      side: 'seller',
-      contactId: contact?.contactId,
-      payload: {
-        under_contract_date:    document.getElementById('suc-uc-date').value,
-        tentative_closing_date: document.getElementById('suc-closing-date').value,
-        inspection_notice_days: document.getElementById('suc-insp-days').value,
-        inspection_notice_resp: document.getElementById('suc-insp-resp-days').value,
-        appraisal_days:         document.getElementById('suc-appraisal-days').value,
-        title_days:             document.getElementById('suc-title-days').value,
-        financial_days:         document.getElementById('suc-financial-days').value,
-      },
-      btn: document.getElementById('sucDatesBtn'),
-    });
-  });
-
-  // ── BUYER UNDER CONTRACT ───────────────────────────────────────
-  const bucSearch = makeContactSearch({ inputId: 'buc-search', resultsId: 'bucResults', selectedId: 'bucSelected', nameId: 'bucName', phoneId: 'bucPhone', clearId: 'bucClear' });
-
-  document.getElementById('bucUpdatesBtn').addEventListener('click', () => {
-    const contact = bucSearch.getContact();
-    submitUC({
-      side: 'buyer',
-      contactId: contact?.contactId,
-      payload: {
-        transactions:         getRadioVal('bucTransRadio'),
-        street:               document.getElementById('buc-street').value.trim(),
-        city:                 document.getElementById('buc-city').value.trim(),
-        state:                document.getElementById('buc-state').value.trim(),
-        zip:                  document.getElementById('buc-zip').value.trim(),
-        closing_gift_ordered: getYNVal('buc-gift'),
-        commission_amount:    document.getElementById('buc-commission').value.trim(),
-        sales_price:          document.getElementById('buc-sales').value.trim(),
-      },
-      btn: document.getElementById('bucUpdatesBtn'),
-    });
-  });
-
-  document.getElementById('bucDatesBtn').addEventListener('click', () => {
-    const contact = bucSearch.getContact();
-    submitUC({
-      side: 'buyer',
-      contactId: contact?.contactId,
-      payload: {
-        under_contract_date:    document.getElementById('buc-uc-date').value,
-        tentative_closing_date: document.getElementById('buc-closing-date').value,
-        inspection_notice_days: document.getElementById('buc-insp-days').value,
-        inspection_notice_resp: document.getElementById('buc-insp-resp-days').value,
-        appraisal_days:         document.getElementById('buc-appraisal-days').value,
-        title_days:             document.getElementById('buc-title-days').value,
-        financial_days:         document.getElementById('buc-financial-days').value,
-      },
-      btn: document.getElementById('bucDatesBtn'),
-    });
-  });
-
-  // ── SCHEDULED MESSAGES (unchanged) ────────────────────────────
-  const contactSearch   = document.getElementById('contactSearch');
-  const searchResults   = document.getElementById('searchResults');
-  const selectedContact = document.getElementById('selectedContact');
-  const msgForm         = document.getElementById('messageForm');
-  const scheduleBtn     = document.getElementById('scheduleBtn');
-  const scheduleBtnText = document.getElementById('scheduleBtnText');
-  const msgText         = document.getElementById('msgText');
-  const charCount       = document.getElementById('charCount');
-  const editingBanner   = document.getElementById('editingBanner');
-
-  let selected = null;
-  let editingId = null;
-  let searchTimer = null;
-
-  msgText.addEventListener('input', () => {
-    const len = msgText.value.length;
-    charCount.textContent = `${len} / 320`;
-    charCount.className = 'char-count' + (len > 320 ? ' over' : '');
-  });
-
-  contactSearch.addEventListener('input', () => {
-    clearTimeout(searchTimer);
-    const q = contactSearch.value.trim();
-    if (q.length < 2) { searchResults.classList.remove('show'); return; }
-    searchTimer = setTimeout(() => searchContacts(q), 350);
-  });
-
-  async function searchContacts(query) {
-    try {
-      const res  = await fetch(`/.netlify/functions/search-contacts?query=${encodeURIComponent(query)}`);
-      const data = await res.json();
-      const contacts = data.contacts || [];
-      searchResults.innerHTML = '';
-      if (contacts.length === 0) {
-        searchResults.innerHTML = '<div class="search-result"><div class="sr-name">No contacts found</div></div>';
-      } else {
-        contacts.forEach(c => {
-          const name  = `${c.firstName || ''} ${c.lastName || ''}`.trim() || c.contactName || 'Unnamed';
-          const phone = c.phone || '';
-          const div = document.createElement('div');
-          div.className = 'search-result';
-          div.innerHTML = `<div class="sr-name">${name}</div><div class="sr-phone">${phone || 'No phone on file'}</div>`;
-          div.addEventListener('click', () => {
-            if (!phone) { showToast('That contact has no phone number in GHL.', true); return; }
-            selected = { name, phone, contactId: c.id };
-            document.getElementById('scName').textContent  = name;
-            document.getElementById('scPhone').textContent = phone;
-            selectedContact.classList.add('show');
-            searchResults.classList.remove('show');
-            contactSearch.value = '';
-          });
-          searchResults.appendChild(div);
+  // CALENDAR (monthly grid)
+  let calYear=new Date().getFullYear(),calMonth=new Date().getMonth();
+  const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('calPrev').addEventListener('click',()=>{calMonth--;if(calMonth<0){calMonth=11;calYear--;}renderCalendar();});
+  document.getElementById('calNext').addEventListener('click',()=>{calMonth++;if(calMonth>11){calMonth=0;calYear++;}renderCalendar();});
+  async function fetchCalEvents(){
+    const start=new Date(calYear,calMonth,1).toISOString().split('T')[0];
+    const end=new Date(calYear,calMonth+1,0).toISOString().split('T')[0];
+    try{const res=await fetch('/.netlify/functions/get-calendar?startDate='+start+'&endDate='+end);const data=await res.json();return data.appointments||[];}
+    catch(err){console.error(err);return[];}
+  }
+  function evCls(appt,days){if((appt.title||'').toLowerCase().includes('closing'))return'ev-closing';if(days<=3)return'ev-urgent';if(days<=7)return'ev-soon';return'ev-ok';}
+  async function renderCalendar(){
+    const label=document.getElementById('calMonthLabel'),cells=document.getElementById('calCells'),status=document.getElementById('calStatus');
+    label.textContent=MONTHS[calMonth]+' '+calYear;cells.innerHTML='';status.textContent='Loading...';
+    const events=await fetchCalEvents();status.textContent='';
+    const today=new Date();today.setHours(0,0,0,0);
+    const firstDay=new Date(calYear,calMonth,1).getDay();
+    const daysInMon=new Date(calYear,calMonth+1,0).getDate();
+    const daysInPrev=new Date(calYear,calMonth,0).getDate();
+    const evByDay={};
+    events.forEach(appt=>{if(!appt.startTime)return;const d=new Date(appt.startTime);if(d.getFullYear()===calYear&&d.getMonth()===calMonth){const day=d.getDate();if(!evByDay[day])evByDay[day]=[];evByDay[day].push(appt);}});
+    const total=Math.ceil((firstDay+daysInMon)/7)*7;
+    for(let i=0;i<total;i++){
+      const cell=document.createElement('div');cell.className='cal-cell';
+      let dayNum,isOther=false;
+      if(i<firstDay){dayNum=daysInPrev-firstDay+i+1;isOther=true;}
+      else if(i>=firstDay+daysInMon){dayNum=i-firstDay-daysInMon+1;isOther=true;}
+      else{dayNum=i-firstDay+1;}
+      if(isOther)cell.classList.add('other-month');
+      const cellDate=new Date(calYear,calMonth,dayNum);cellDate.setHours(0,0,0,0);
+      if(!isOther&&cellDate.getTime()===today.getTime())cell.classList.add('today');
+      const numEl=document.createElement('div');numEl.className='cal-num';numEl.textContent=dayNum;cell.appendChild(numEl);
+      if(!isOther&&evByDay[dayNum]){
+        evByDay[dayNum].slice(0,3).forEach(appt=>{
+          const apptDate=new Date(calYear,calMonth,dayNum);apptDate.setHours(0,0,0,0);
+          const days=Math.round((apptDate-today)/86400000);
+          const ev=document.createElement('div');ev.className='cal-event '+evCls(appt,days);
+          ev.textContent=(appt.title||'').replace(/\s*-\s*.*$/,'').substring(0,16);ev.title=appt.title||'';cell.appendChild(ev);
         });
+        if(evByDay[dayNum].length>3){const more=document.createElement('div');more.className='cal-event ev-ok';more.textContent='+'+(evByDay[dayNum].length-3)+' more';cell.appendChild(more);}
       }
-      searchResults.classList.add('show');
-    } catch (err) {
-      console.error(err);
-      showToast('Contact search failed. Try again.', true);
+      cells.appendChild(cell);
     }
+    if(!events.length)status.textContent='No events this month.';
   }
 
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-wrap')) {
-      document.querySelectorAll('.search-results').forEach(r => r.classList.remove('show'));
-    }
+  // SCHEDULED MESSAGES
+  const contactSearch=document.getElementById('contactSearch'),searchResults=document.getElementById('searchResults');
+  const selectedContact=document.getElementById('selectedContact'),msgForm=document.getElementById('messageForm');
+  const scheduleBtn=document.getElementById('scheduleBtn'),scheduleBtnText=document.getElementById('scheduleBtnText');
+  const msgText=document.getElementById('msgText'),charCount=document.getElementById('charCount');
+  const editingBanner=document.getElementById('editingBanner');
+  let selected=null,editingId=null,searchTimer=null;
+  msgText.addEventListener('input',()=>{const len=msgText.value.length;charCount.textContent=len+' / 320';charCount.className='char-count'+(len>320?' over':'');});
+  contactSearch.addEventListener('input',()=>{clearTimeout(searchTimer);const q=contactSearch.value.trim();if(q.length<2){searchResults.classList.remove('show');return;}searchTimer=setTimeout(()=>searchContacts(q),350);});
+  async function searchContacts(query){
+    try{const res=await fetch('/.netlify/functions/search-contacts?query='+encodeURIComponent(query));const data=await res.json();const contacts=data.contacts||[];searchResults.innerHTML='';
+    if(!contacts.length){searchResults.innerHTML='<div class="search-result"><div class="sr-name">No contacts found</div></div>';}
+    else{contacts.forEach(c=>{const nm=((c.firstName||'')+' '+(c.lastName||'')).trim()||c.contactName||'Unnamed';const phone=c.phone||'';const div=document.createElement('div');div.className='search-result';div.innerHTML='<div class="sr-name">'+esc(nm)+'</div><div class="sr-phone">'+(phone||'No phone on file')+'</div>';div.addEventListener('click',()=>{if(!phone){showToast('That contact has no phone number in GHL.',true);return;}selected={name:nm,phone,contactId:c.id};document.getElementById('scName').textContent=nm;document.getElementById('scPhone').textContent=phone;selectedContact.classList.add('show');searchResults.classList.remove('show');contactSearch.value='';});searchResults.appendChild(div);});}
+    searchResults.classList.add('show');}catch(err){console.error(err);showToast('Contact search failed. Try again.',true);}
+  }
+  document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))document.querySelectorAll('.search-results').forEach(r=>r.classList.remove('show'));});
+  document.getElementById('scClear').addEventListener('click',()=>{selected=null;selectedContact.classList.remove('show');});
+  msgForm.addEventListener('submit',async e=>{
+    e.preventDefault();if(!selected){showToast('Please select a contact.',true);return;}
+    const message=msgText.value.trim(),sendDate=document.getElementById('sendDate').value,sendTime=document.getElementById('sendTime').value;
+    if(!message){showToast('Please type a message.',true);return;}if(!sendDate||!sendTime){showToast('Please pick a date and time.',true);return;}
+    const payload={action:editingId?'edit':'schedule',message_id:editingId||('msg_'+Date.now()),first_name:selected.firstName||selected.name.split(' ')[0]||'',last_name:selected.lastName||selected.name.split(' ').slice(1).join(' ')||'',contact_id:selected.contactId||'',phone:selected.phone,message,send_date:sendDate,send_time:sendTime};
+    scheduleBtn.disabled=true;scheduleBtn.classList.add('loading');
+    try{await fetch(SMS_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});showToast(editingId?'Message updated!':'Message scheduled!');resetMsgForm();setTimeout(loadQueue,2500);}
+    catch(err){showToast('Something went wrong. Try again.',true);console.error(err);}
+    finally{scheduleBtn.disabled=false;scheduleBtn.classList.remove('loading');}
   });
-
-  document.getElementById('scClear').addEventListener('click', () => { selected = null; selectedContact.classList.remove('show'); });
-
-  msgForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!selected) { showToast('Please select a contact.', true); return; }
-    const message  = msgText.value.trim();
-    const sendDate = document.getElementById('sendDate').value;
-    const sendTime = document.getElementById('sendTime').value;
-    if (!message) { showToast('Please type a message.', true); return; }
-    if (!sendDate || !sendTime) { showToast('Please pick a date and time.', true); return; }
-    const payload = { action: editingId ? 'edit' : 'schedule', message_id: editingId || ('msg_' + Date.now()), first_name: selected.firstName || selected.name.split(' ')[0] || '', last_name: selected.lastName || selected.name.split(' ').slice(1).join(' ') || '', contact_id: selected.contactId || '', phone: selected.phone, message, send_date: sendDate, send_time: sendTime };
-    scheduleBtn.disabled = true;
-    scheduleBtn.classList.add('loading');
-    try {
-      await fetch(SMS_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      showToast(editingId ? '✓ Message updated!' : '✓ Message scheduled!');
-      resetMsgForm();
-      setTimeout(loadQueue, 2500);
-    } catch (err) {
-      showToast('Something went wrong. Try again.', true);
-      console.error(err);
-    } finally {
-      scheduleBtn.disabled = false;
-      scheduleBtn.classList.remove('loading');
-    }
-  });
-
-  function resetMsgForm() {
-    msgForm.reset();
-    selected = null;
-    selectedContact.classList.remove('show');
-    charCount.textContent = '0 / 320';
-    charCount.className = 'char-count';
-    editingId = null;
-    editingBanner.classList.remove('show');
-    scheduleBtnText.textContent = 'Schedule Message';
+  function resetMsgForm(){msgForm.reset();selected=null;selectedContact.classList.remove('show');charCount.textContent='0 / 320';charCount.className='char-count';editingId=null;editingBanner.classList.remove('show');scheduleBtnText.textContent='Schedule Message';}
+  document.getElementById('editCancelBtn').addEventListener('click',resetMsgForm);
+  const pendingList=document.getElementById('pendingList'),sentList=document.getElementById('sentList');
+  document.getElementById('refreshQueue').addEventListener('click',loadQueue);
+  async function loadQueue(){
+    try{const res=await fetch('https://sheets.googleapis.com/v4/spreadsheets/'+SHEET_ID+'/values/'+encodeURIComponent('Scheduled SMS Action!A:K')+'?key='+API_KEY);const data=await res.json();const rows=(data.values||[]).slice(1);
+    const pending=rows.filter(r=>(r[8]||'').toLowerCase()==='pending');const sent=rows.filter(r=>(r[8]||'').toLowerCase()==='sent').slice(-10).reverse();
+    pendingList.innerHTML='';
+    if(!pending.length){pendingList.innerHTML='<div class="queue-empty">No pending messages.</div>';}
+    else{pending.sort((a,b)=>(a[5]+' '+a[6]).localeCompare(b[5]+' '+b[6]));pending.forEach(r=>{const div=document.createElement('div');div.className='queue-item';div.innerHTML='<div class="qi-top"><div class="qi-name">'+esc((r[1]||'')+' '+(r[2]||''))+'</div><div class="qi-when">'+formatWhen(r[6],r[7])+'</div></div><div class="qi-msg">'+esc(r[5])+'</div><div class="qi-actions"><button class="qi-btn qi-edit" type="button">Edit</button><button class="qi-btn qi-cancel" type="button">Cancel</button></div>';div.querySelector('.qi-edit').addEventListener('click',()=>startEdit(r));div.querySelector('.qi-cancel').addEventListener('click',e=>cancelMsg(r[0],e.target));pendingList.appendChild(div);});}
+    sentList.innerHTML='';
+    if(!sent.length){sentList.innerHTML='<div class="queue-empty">Nothing sent yet.</div>';}
+    else{sent.forEach(r=>{const div=document.createElement('div');div.className='sent-item';div.innerHTML='<div class="si-name">'+esc((r[1]||'')+' '+(r[2]||''))+'</div><div class="si-msg">'+esc(r[5])+'</div><div class="si-when">'+formatWhen(r[6],r[7])+'</div>';sentList.appendChild(div);});}}
+    catch(err){console.error(err);pendingList.innerHTML='<div class="queue-empty">Could not load queue. Hit refresh.</div>';sentList.innerHTML='<div class="queue-empty">Could not load history.</div>';}
   }
+  function startEdit(r){editingId=r[0];selected={name:(r[1]||'')+' '+(r[2]||''),firstName:r[1]||'',lastName:r[2]||'',phone:r[3]||'',contactId:r[4]||''};document.getElementById('scName').textContent=(r[1]||'')+' '+(r[2]||'');document.getElementById('scPhone').textContent=r[3]||'';selectedContact.classList.add('show');msgText.value=r[5]||'';msgText.dispatchEvent(new Event('input'));document.getElementById('sendDate').value=r[6]||'';document.getElementById('sendTime').value=r[7]||'';editingBanner.classList.add('show');scheduleBtnText.textContent='Update Message';window.scrollTo({top:0,behavior:'smooth'});}
+  async function cancelMsg(id,btnEl){if(!confirm('Cancel this scheduled message?'))return;btnEl.disabled=true;try{await fetch(SMS_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'cancel',message_id:id})});showToast('Message cancelled.');setTimeout(loadQueue,2500);}catch(err){showToast('Cancel failed. Try again.',true);btnEl.disabled=false;}}
 
-  document.getElementById('editCancelBtn').addEventListener('click', resetMsgForm);
-
-  const pendingList = document.getElementById('pendingList');
-  const sentList    = document.getElementById('sentList');
-  document.getElementById('refreshQueue').addEventListener('click', loadQueue);
-
-  async function loadQueue() {
-    try {
-      const range = encodeURIComponent('Scheduled SMS Action!A:K');
-      const url   = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`;
-      const res   = await fetch(url);
-      const data  = await res.json();
-      const rows  = (data.values || []).slice(1);
-      const pending = rows.filter(r => (r[8] || '').toLowerCase() === 'pending');
-      const sent    = rows.filter(r => (r[8] || '').toLowerCase() === 'sent').slice(-10).reverse();
-      pendingList.innerHTML = '';
-      if (pending.length === 0) {
-        pendingList.innerHTML = '<div class="queue-empty">No pending messages.</div>';
-      } else {
-        pending.sort((a, b) => (`${a[5]} ${a[6]}`).localeCompare(`${b[5]} ${b[6]}`));
-        pending.forEach(r => {
-          const div = document.createElement('div');
-          div.className = 'queue-item';
-          div.innerHTML = `<div class="qi-top"><div class="qi-name">${esc((r[1]||'')+' '+(r[2]||''))}</div><div class="qi-when">${formatWhen(r[6],r[7])}</div></div><div class="qi-msg">${esc(r[5])}</div><div class="qi-actions"><button class="qi-btn qi-edit" type="button">Edit</button><button class="qi-btn qi-cancel" type="button">Cancel</button></div>`;
-          div.querySelector('.qi-edit').addEventListener('click', () => startEdit(r));
-          div.querySelector('.qi-cancel').addEventListener('click', (e) => cancelMessage(r[0], e.target));
-          pendingList.appendChild(div);
-        });
-      }
-      sentList.innerHTML = '';
-      if (sent.length === 0) {
-        sentList.innerHTML = '<div class="queue-empty">Nothing sent yet.</div>';
-      } else {
-        sent.forEach(r => {
-          const div = document.createElement('div');
-          div.className = 'sent-item';
-          div.innerHTML = `<div class="si-name">${esc((r[1]||'')+' '+(r[2]||''))}</div><div class="si-msg">${esc(r[5])}</div><div class="si-when">${formatWhen(r[6],r[7])}</div>`;
-          sentList.appendChild(div);
-        });
-      }
-    } catch (err) {
-      console.error(err);
-      pendingList.innerHTML = '<div class="queue-empty">Could not load queue. Hit refresh.</div>';
-      sentList.innerHTML = '<div class="queue-empty">Could not load history.</div>';
-    }
-  }
-
-  function esc(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-  function formatWhen(dateStr, timeStr) {
-    if (!dateStr) return '';
-    try {
-      const d = new Date(`${dateStr}T${timeStr||'00:00'}`);
-      const datePart = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-      const timePart = timeStr ? d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : '';
-      return timePart ? `${datePart} · ${timePart}` : datePart;
-    } catch { return `${dateStr} ${timeStr||''}`; }
-  }
-
-  function startEdit(r) {
-    editingId = r[0];
-    selected  = { name: (r[1]||'')+' '+(r[2]||''), firstName: r[1]||'', lastName: r[2]||'', phone: r[3]||'', contactId: r[4]||'' };
-    document.getElementById('scName').textContent  = (r[1]||'')+' '+(r[2]||'');
-    document.getElementById('scPhone').textContent = r[3]||'';
-    selectedContact.classList.add('show');
-    msgText.value = r[5]||'';
-    msgText.dispatchEvent(new Event('input'));
-    document.getElementById('sendDate').value = r[6]||'';
-    document.getElementById('sendTime').value = r[7]||'';
-    editingBanner.classList.add('show');
-    scheduleBtnText.textContent = 'Update Message';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  async function cancelMessage(id, btnEl) {
-    if (!confirm('Cancel this scheduled message?')) return;
-    btnEl.disabled = true;
-    try {
-      await fetch(SMS_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'cancel', message_id: id }) });
-      showToast('✓ Message cancelled.');
-      setTimeout(loadQueue, 2500);
-    } catch (err) {
-      showToast('Cancel failed. Try again.', true);
-      btnEl.disabled = false;
-    }
-  }
-
-  // ── SET DEFAULTS ──────────────────────────────────────────────
-  document.getElementById('showingDate').value = new Date().toISOString().split('T')[0];
-  document.getElementById('ls-livedate').value = new Date().toISOString().split('T')[0];
+  document.getElementById('showingDate').value=new Date().toISOString().split('T')[0];
+  document.getElementById('ls-livedate').value=new Date().toISOString().split('T')[0];
 </script>
 </body>
 </html>
