@@ -508,14 +508,6 @@
   // MAIN TAB SWITCHING
   const pageTitle=document.getElementById('pageTitle');
   const pageTitles={contacts:'Contacts',calendar:'Calendar',messages:'Scheduled Messages'};
-  // ── DEEP LINK: ?tab=messages lands on Scheduled Messages ──
-  const urlParams = new URLSearchParams(window.location.search);
-  const deepTab = urlParams.get('tab');
-  if (deepTab) {
-    const targetBtn = document.querySelector(`.tab-btn[data-tab="${deepTab}"]`);
-    if (targetBtn) targetBtn.click();
-  }
-
   document.querySelectorAll('.tab-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -529,6 +521,14 @@
   });
 
   document.querySelectorAll('.sub-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.sub-page').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('sub-'+btn.dataset.sub).classList.add('active');});});
+
+  // ── DEEP LINK: ?tab=messages lands on Scheduled Messages ──
+  const urlParams = new URLSearchParams(window.location.search);
+  const deepTab = urlParams.get('tab');
+  if (deepTab) {
+    const targetBtn = document.querySelector('.tab-btn[data-tab="' + deepTab + '"]');
+    if (targetBtn) targetBtn.click();
+  }
   document.querySelectorAll('.pill-tabs').forEach(group=>{group.querySelectorAll('.pill-btn').forEach(btn=>{btn.addEventListener('click',()=>{group.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const sp=group.closest('.sub-page');sp.querySelectorAll('.tool-page').forEach(p=>p.classList.remove('active'));document.getElementById('tool-'+btn.dataset.tool).classList.add('active');});});});
   document.querySelectorAll('.uc-tabs').forEach(group=>{group.querySelectorAll('.uc-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{group.querySelectorAll('.uc-tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const card=group.closest('.card');card.querySelectorAll('.uc-panel').forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.uc).classList.add('active');});});});
   document.querySelectorAll('.radio-group').forEach(group=>{group.querySelectorAll('.radio-opt').forEach(opt=>{opt.addEventListener('click',()=>{group.querySelectorAll('.radio-opt').forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');});});});
