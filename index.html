@@ -508,6 +508,14 @@
   // MAIN TAB SWITCHING
   const pageTitle=document.getElementById('pageTitle');
   const pageTitles={contacts:'Contacts',calendar:'Calendar',messages:'Scheduled Messages'};
+  // ── DEEP LINK: ?tab=messages lands on Scheduled Messages ──
+  const urlParams = new URLSearchParams(window.location.search);
+  const deepTab = urlParams.get('tab');
+  if (deepTab) {
+    const targetBtn = document.querySelector(`.tab-btn[data-tab="${deepTab}"]`);
+    if (targetBtn) targetBtn.click();
+  }
+
   document.querySelectorAll('.tab-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
